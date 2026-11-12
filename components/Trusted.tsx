@@ -31,8 +31,8 @@ export function Trusted() {
 
         {/* strip logo (GIF animasi) */}
         <div className="relative mt-8 overflow-hidden rounded-[18px] bg-[#F6F7F9] dark:bg-white/[.04]">
-          <Image src="/motion/logo-light.gif" alt="Astra International, Bank Indonesia, Pertamina, Telkom Indonesia, Komdigi" width={1134} height={102} unoptimized className="relative left-1/2 mx-auto h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:hidden" />
-          <Image src="/motion/logo-dark.gif" alt="" aria-hidden width={1134} height={102} unoptimized className="relative left-1/2 mx-auto hidden h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:block" />
+          <Image src="/motion/logo-brand.gif" alt="Astra International, Bank Indonesia, Pertamina, Telkom Indonesia, Komdigi" width={1134} height={102} unoptimized className="relative left-1/2 mx-auto h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:hidden" />
+          <Image src="/motion/logo_cloud_light_transparent.gif" alt="" aria-hidden width={1134} height={102} unoptimized className="relative left-1/2 mx-auto hidden h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:block" />
         </div>
 
         <div className="relative mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[873fr_357fr]">
