@@ -21,8 +21,8 @@ export function MultiChannel() {
 
         {/* Seluruh animasi orbit (ring, ikon platform, komet) sudah ada di dalam GIF */}
         <div className="relative mx-auto mt-2 w-full select-none" style={{ maxWidth: 1114, aspectRatio: "960 / 540" }}>
-          <Image src="/motion/gif socindex light.gif" alt="Socindex AI hub monitoring X, Instagram, Facebook, Threads, YouTube, TikTok and LinkedIn" fill unoptimized sizes="(max-width: 1186px) 100vw, 1114px" className="object-contain dark:hidden" />
-          <Image src="/motion/gif socindex dark.gif" alt="" aria-hidden fill unoptimized sizes="(max-width: 1186px) 100vw, 1114px" className="hidden object-contain dark:block [mask-image:radial-gradient(ellipse_at_center,#000_62%,transparent_98%)]" />
+          <Image src="/motion/hub-light.gif" alt="Socindex AI hub monitoring X, Instagram, Facebook, Threads, YouTube, TikTok and LinkedIn" fill unoptimized sizes="(max-width: 1186px) 100vw, 1114px" className="object-contain dark:hidden" />
+          <Image src="/motion/hub-dark.gif" alt="" aria-hidden fill unoptimized sizes="(max-width: 1186px) 100vw, 1114px" className="hidden object-contain dark:block [mask-image:radial-gradient(ellipse_at_center,#000_62%,transparent_98%)]" />
         </div>
       </div>
     </section>
