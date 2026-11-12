@@ -104,10 +104,25 @@ export function IssuePreview() {
             ))}
           </ol>
 
-          <div className="mt-auto flex items-center justify-between pt-6">
-            <button type="button" onClick={() => go(-1)} aria-label="Previous slide" className="grid h-9 w-[58px] place-items-center rounded-xl border border-line text-[#7a8798] transition hover:border-brand hover:text-brand dark:border-white/15 dark:text-white/70"><LuChevronLeft size={18} /></button>
-            <span className="text-[11px] text-[#9aa5b3] dark:text-white/40" aria-live="polite">{slide + 1} / {total}</span>
-            <button type="button" onClick={() => go(1)} aria-label="Next slide" className="grid h-9 w-[58px] place-items-center rounded-xl border border-line text-navy-ink transition hover:border-brand hover:text-brand dark:border-white/15 dark:text-white"><LuChevronRight size={18} /></button>
+          {/* Kontrol slide: titik indikator + panah (gaya sama dengan Trusted) */}
+          <div className="mt-auto flex items-center justify-between px-1 pt-6">
+            <div className="flex items-center gap-2" role="tablist" aria-label="Slides">
+              {Array.from({ length: total }).map((_, d) => (
+                <button
+                  key={d}
+                  type="button"
+                  role="tab"
+                  aria-selected={d === slide}
+                  aria-label={`Slide ${d + 1}`}
+                  onClick={() => go(d - slide)}
+                  className={cn("h-[7px] rounded-full transition-all", d === slide ? "w-[22px] bg-brand" : "w-[7px] bg-[#F5C3B8] dark:bg-white/25")}
+                />
+              ))}
+            </div>
+            <div className="flex items-center gap-3">
+              <button type="button" onClick={() => go(-1)} aria-label="Previous slide" className="grid h-9 w-9 place-items-center rounded-full text-navy-ink dark:text-white"><LuChevronLeft size={18} /></button>
+              <button type="button" onClick={() => go(1)} aria-label="Next slide" className="grid h-[37px] w-[37px] place-items-center rounded-full bg-navy text-white dark:bg-[#1b2a36] dark:ring-1 dark:ring-white/20"><LuChevronRight size={18} /></button>
+            </div>
           </div>
         </div>
       </div>
