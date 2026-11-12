@@ -9,7 +9,7 @@ export function HeroDashboard() {
   return (
     <div className="relative w-full max-w-[701px] overflow-hidden rounded-[44px]" style={{ aspectRatio: "900 / 755" }}>
       <Image
-        src="/motion/dashboard-light.gif"
+        src="/motion/converted.gif"
         alt="Socindex brand intelligence dashboard: mentions, engagement, sentiment, influencer insight and AI summary"
         fill
         unoptimized
@@ -18,7 +18,7 @@ export function HeroDashboard() {
         className="object-contain dark:hidden"
       />
       <Image
-        src="/motion/dashboard-dark.gif"
+        src="/motion/converted (1).gif"
         alt=""
         aria-hidden
         fill
