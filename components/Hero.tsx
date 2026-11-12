@@ -21,7 +21,7 @@ export function Hero() {
           </span>
 
           <h1 className="mt-6 text-[clamp(2.6rem,6vw,3.9rem)] font-light leading-[1.05] tracking-[-0.02em] text-navy-ink dark:text-white">
-            Turn Social Media Data<span className="text-brand">Into Actionable Insights</span>
+            Turn Social Media Data <span className="text-brand">Into Actionable Insights</span>
           </h1>
 
           <p className="mt-7 max-w-[450px] text-[16px] leading-[1.5] text-[#66758a] dark:text-white/70">
