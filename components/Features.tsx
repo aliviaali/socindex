@@ -38,7 +38,7 @@ export function Features() {
       <h2 className="mt-5 max-w-[660px] text-[clamp(1.9rem,3.4vw,2.5rem)] font-bold leading-[1.15] tracking-[-0.02em] text-navy-ink dark:text-white">
         {t("Powerful Features for Smarter Decisions")}
       </h2>
-      <p className="mt-4 max-w-[650px] text-[14px] leading-[1.6] text-[#7a8798] dark:text-white/45">
+      <p className="mt-4 max-w-[650px] text-[14px] leading-[1.6] text-[#7a8798] dark:text-white/45 font-normal">
         {t("Everything you need to monitor, analyze, and understand your social media presence all in one dashboard.")}
       </p>
 
@@ -75,7 +75,7 @@ export function Features() {
                 </span>
               </div>
               <div>
-                <h3 className="text-[19px] font-semibold leading-tight">{t(f.title)}</h3>
+                <h3 className="text-[19px] font-bold leading-tight">{t(f.title)}</h3>
                 <p className={cn("mt-2 text-[12.5px]", on ? "text-white/80 dark:text-white" : "text-[#7a8798] dark:text-white/35")}>{t(f.desc)}</p>
               </div>
             </article>

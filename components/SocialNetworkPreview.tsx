@@ -45,7 +45,7 @@ export function SocialNetworkPreview({ topicId, onUnlock }: { topicId: string; o
   return (
     <div className="glass shrink-0 overflow-hidden rounded-[26px] p-4">
       <div className="flex flex-wrap items-center justify-between gap-2 text-navy-ink dark:text-white">
-        <h3 className="flex items-center gap-2 text-base font-semibold"><LuShare2 />{t("Social Network")}</h3>
+        <h3 className="flex items-center gap-2 text-base font-bold"><LuShare2 />{t("Social Network")}</h3>
         <div className="flex rounded-full bg-slate-100 p-1 text-xs font-semibold dark:bg-white/10">
           <button type="button" onClick={onUnlock} className="rounded-full bg-[#18223B] px-4 py-2.5 text-white dark:bg-slate-200 dark:text-slate-900">{t("Network")}</button>
           <button type="button" onClick={onUnlock} className="rounded-full px-4 py-2.5">{t("Stats")}</button>
@@ -124,4 +124,3 @@ export function SocialNetworkPreview({ topicId, onUnlock }: { topicId: string; o
     </div>
   );
 }
-

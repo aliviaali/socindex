@@ -128,8 +128,8 @@ export function HowItWorks() {
       <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-0">
         <div className="mx-auto flex max-w-[640px] flex-col items-center text-center">
           <Pill>{t("How It's Work")}</Pill>
-          <h2 className="mt-5 text-[clamp(1.9rem,3.4vw,2.5rem)] font-light leading-[1.15] tracking-[-0.02em] text-navy-ink dark:text-white">{t("How Socindex Turns Data Into Your Decision")}</h2>
-          <p className="mt-5 max-w-[400px] text-[13px] leading-[1.6] text-[#7a8798] dark:text-white/55">{t("Media data is collected, processed, and analyzed to help you discover the stories, trends, and connections behind the numbers.")}</p>
+          <h2 className="mt-5 text-[clamp(1.9rem,3.4vw,2.5rem)] font-bold leading-[1.15] tracking-[-0.02em] text-navy-ink dark:text-white">{t("How Socindex Turns Data Into Your Decision")}</h2>
+          <p className="mt-5 max-w-[400px] text-[13px] leading-[1.6] text-[#7a8798] dark:text-white/55 font-normal">{t("Media data is collected, processed, and analyzed to help you discover the stories, trends, and connections behind the numbers.")}</p>
           <a href="#get-started" className="mt-6 inline-flex h-[34px] items-center rounded-full bg-[#D93A1E] px-6 text-[12px] font-semibold text-white transition hover:brightness-110">{t("Discuss With Us →")}</a>
         </div>
 

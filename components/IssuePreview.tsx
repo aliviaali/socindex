@@ -31,7 +31,7 @@ export function IssuePreview() {
         <br />
         {t("Determine your next steps.")}
       </h2>
-      <p className="mt-4 text-[13.5px] text-[#7a8798] dark:text-white/45">
+      <p className="mt-4 text-[13.5px] text-[#7a8798] dark:text-white/45 font-normal">
         {t("Find the most relevant conversations, understand the sentiment, and prioritize your team's response.")}
       </p>
 
@@ -40,7 +40,7 @@ export function IssuePreview() {
         <div className="glass rounded-[28px] p-6 sm:p-[22px]">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <h3 className="text-[24px] font-semibold text-navy-ink dark:text-white">{t("Top Issue Preview")}</h3>
+              <h3 className="text-[24px] font-bold text-navy-ink dark:text-white">{t("Top Issue Preview")}</h3>
               <p className="mt-1 text-[12px] text-[#7a8798] dark:text-white/45">{t("Dummy data • Top issues by conversation volume • Last 7 days")}</p>
             </div>
             <span className="rounded-full bg-[#FFEEE6] px-3 py-1.5 text-[10px] font-bold text-brand dark:bg-[#3A211F]">DATA</span>

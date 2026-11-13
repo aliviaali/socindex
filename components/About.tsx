@@ -31,10 +31,10 @@ export function About() {
 
         <div>
           <Pill>{t("About Us")}</Pill>
-          <h2 className="mt-5 text-[clamp(1.9rem,3.4vw,2.5rem)] font-light leading-[1.1] tracking-[-0.02em] text-navy-ink dark:text-white">
+          <h2 className="mt-5 text-[clamp(1.9rem,3.4vw,2.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-navy-ink dark:text-white">
             {t("Building Smarter Social Media Intelligences")}
           </h2>
-          <p className="mt-5 max-w-[540px] text-[14.5px] leading-[1.6] text-[#7a8798] dark:text-white/55">
+          <p className="mt-5 max-w-[540px] text-[14.5px] leading-[1.6] text-[#7a8798] dark:text-white/55 font-normal">
             {t("Socindex is a BIG DATA MONITORING tools. Designed to help organizations and businesses analyze social media data with advanced AI and machine learning technology.")}
           </p>
 

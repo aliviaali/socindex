@@ -11,10 +11,10 @@ export function MultiChannel() {
       <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-0">
         <div className="text-center">
           <Pill>{t("Ai Powered")}</Pill>
-          <h2 className="mx-auto mt-5 max-w-[1010px] text-[clamp(1.8rem,3.4vw,2.5rem)] font-light leading-[1.15] tracking-[-0.02em] text-[#3a4250] dark:text-white">
+          <h2 className="mx-auto mt-5 max-w-[1010px] text-[clamp(1.8rem,3.4vw,2.5rem)] font-bold leading-[1.15] tracking-[-0.02em] text-[#3a4250] dark:text-white">
             {t("Comprehensive Multi-Channel Monitoring powered by Artificial Intelligence")}
           </h2>
-          <p className="mx-auto mt-5 max-w-[920px] text-[14px] text-[#7a8798] dark:text-white/45">
+          <p className="mx-auto mt-5 max-w-[920px] text-[14px] text-[#7a8798] dark:text-white/45 font-normal">
             {t("Track your brand keywords across X, Instagram, Facebook, Threads, YouTube, TikTok, and online forums and blogs simultaneously.")}
           </p>
         </div>

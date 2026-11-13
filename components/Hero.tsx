@@ -24,11 +24,11 @@ export function Hero() {
             {t("Social Media Analytics")}
           </span>
 
-          <h1 className="mt-6 text-[clamp(2.6rem,6vw,3.9rem)] font-light leading-[1.05] tracking-[-0.02em] text-navy-ink dark:text-white">
+          <h1 className="mt-6 text-[clamp(2.6rem,6vw,3.9rem)] font-bold leading-[1.05] tracking-[-0.02em] text-navy-ink dark:text-white">
             {t("Turn Social Media Data")} <span className="text-brand">{t("Into Actionable Insights")}</span>
           </h1>
 
-          <p className="mt-7 max-w-[450px] text-[16px] leading-[1.5] text-[#66758a] dark:text-white/70">
+          <p className="mt-7 max-w-[450px] text-[16px] leading-[1.5] text-[#66758a] dark:text-white/70 font-normal">
             {t("Monitor your brand reputation, analyze social media performance, and uncover meaningful insights with Socindex’s AI-powered analytics platform.")}
           </p>
 

@@ -21,18 +21,18 @@ export function Trusted() {
       <div className="relative mx-auto max-w-page px-4 sm:px-6 lg:px-0">
         <div className="text-center">
           <Pill>{tr("Trusted by leading organizations")}</Pill>
-          <h2 className="mt-5 text-[clamp(1.9rem,3.4vw,2.5rem)] font-light leading-[1.1] tracking-[-0.02em] text-navy-ink dark:text-white">
+          <h2 className="mt-5 text-[clamp(1.9rem,3.4vw,2.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-navy-ink dark:text-white">
             {tr("Trusted by Agency, Government & Company")}
           </h2>
-          <p className="mx-auto mt-4 max-w-[760px] text-[14px] text-[#7a8798] dark:text-white/45">
+          <p className="mx-auto mt-4 max-w-[760px] text-[14px] text-[#7a8798] dark:text-white/45 font-normal">
             {tr("More than 500+ Agency and companies already use Socindex to manage their social media intelligence")}
           </p>
         </div>
 
         {/* strip logo (GIF animasi) */}
         <div className="relative mt-8 overflow-hidden rounded-[18px] bg-[#F6F7F9] dark:bg-white/[.04]">
-          <Image src="/motion/logo-brand.gif" alt="Astra International, Bank Indonesia, Pertamina, Telkom Indonesia, Komdigi" width={1134} height={102} unoptimized className="relative left-1/2 mx-auto h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:hidden" />
-          <Image src="/motion/logo_cloud_light_transparent.gif" alt="" aria-hidden width={1134} height={102} unoptimized className="relative left-1/2 mx-auto hidden h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:block" />
+          <Image src="/motion/logo-light.gif" alt="Astra International, Bank Indonesia, Pertamina, Telkom Indonesia, Komdigi" width={1134} height={102} unoptimized className="relative left-1/2 mx-auto h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:hidden" />
+          <Image src="/motion/logo-dark.gif" alt="" aria-hidden width={1134} height={102} unoptimized className="relative left-1/2 mx-auto hidden h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:block" />
         </div>
 
         <div className="relative mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[873fr_357fr]">

@@ -18,7 +18,7 @@ export function ProblemSolution() {
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
               <div>
                 <Pill>{t("The Problem & Solution")}</Pill>
-                <h2 className="mt-5 max-w-[640px] text-[clamp(1.9rem,3.5vw,2.6rem)] font-light leading-[1.12] tracking-[-0.02em] text-navy-ink dark:text-white">
+                <h2 className="mt-5 max-w-[640px] text-[clamp(1.9rem,3.5vw,2.6rem)] font-bold leading-[1.12] tracking-[-0.02em] text-navy-ink dark:text-white">
                   {t("From Scattered Data to Clear Insights")}
                 </h2>
               </div>
@@ -34,7 +34,7 @@ export function ProblemSolution() {
                   <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-white/10 text-brand"><LuLayoutGrid size={20} /></span>
                   <div>
                     <div className="text-[10px] font-bold uppercase tracking-wide text-brand">{t("Before Socindex")}</div>
-                    <h3 className="text-[22px] font-semibold leading-tight">{t("The Problem")}</h3>
+                    <h3 className="text-[22px] font-bold leading-tight">{t("The Problem")}</h3>
                   </div>
                 </div>
                 <ul className="mt-6 space-y-5">
@@ -68,7 +68,7 @@ export function ProblemSolution() {
                   <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-[#DFF5E7] text-[#12a150] dark:bg-[#12a150]/25"><LuSparkles size={20} /></span>
                   <div>
                     <div className="text-[10px] font-bold uppercase tracking-wide text-[#12a150]">{t("With Socindex")}</div>
-                    <h3 className="text-[22px] font-semibold leading-tight text-navy-ink dark:text-white">{t("Our Solution")}</h3>
+                    <h3 className="text-[22px] font-bold leading-tight text-navy-ink dark:text-white">{t("Our Solution")}</h3>
                   </div>
                 </div>
                 <ul className="mt-6 space-y-5">

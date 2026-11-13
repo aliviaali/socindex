@@ -78,7 +78,7 @@ export function GlassSelect({
         <ul
           id={`${uid}-list`}
           role="listbox"
-          className={cn("glass-strong absolute left-0 right-0 top-[calc(100%+8px)] z-40 max-h-64 animate-fadeUp overflow-auto rounded-2xl p-1.5 text-[14px] text-navy-ink dark:text-white", menuClassName)}
+          className={cn("glass-strong glass-select-menu absolute left-0 right-0 top-[calc(100%+8px)] z-40 max-h-64 animate-fadeUp overflow-auto rounded-2xl p-1.5 text-left text-[14px] text-navy-ink dark:text-white", menuClassName)}
         >
           {options.map((o, i) => (
             <li
@@ -88,9 +88,9 @@ export function GlassSelect({
               onMouseEnter={() => setHi(i)}
               onClick={() => { onChange(o.value); setOpen(false); }}
               className={cn(
-                "cursor-pointer rounded-xl px-4 py-2.5 transition-colors",
-                i === hi && "bg-brand/10 dark:bg-white/10",
-                o.value === value && "font-semibold text-brand",
+                "min-h-11 cursor-pointer rounded-xl px-4 py-2.5 transition-colors dark:text-white",
+                i === hi && "bg-orange-100 dark:bg-white/15",
+                o.value === value && "bg-orange-50 font-semibold text-[#9A2D16] dark:bg-white/10 dark:text-white",
               )}
             >
               {o.label}

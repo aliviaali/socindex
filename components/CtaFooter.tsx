@@ -38,8 +38,8 @@ export function Cta() {
         <span className="inline-flex items-center gap-2 rounded-full border border-white/30 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wide">
           <span className="h-1.5 w-1.5 rounded-full bg-white" /> {t("Get Started")}
         </span>
-        <h2 className="mt-9 text-[clamp(2.2rem,5vw,3.35rem)] font-light leading-[1.1] tracking-[-0.02em]">{t("Ready to See the Bigger Picture?")}</h2>
-        <p className="mt-6 text-[15px] text-white/85">{t("Request your custom demo today and experience the power of social media intelligence.")}</p>
+        <h2 className="mt-9 text-[clamp(2.2rem,5vw,3.35rem)] font-bold leading-[1.1] tracking-[-0.02em]">{t("Ready to See the Bigger Picture?")}</h2>
+        <p className="mt-6 text-[15px] text-white/85 font-normal">{t("Request your custom demo today and experience the power of social media intelligence.")}</p>
 
         <form onSubmit={onSubmit} noValidate className="mt-12 grid gap-5 sm:grid-cols-2">
           <div><label htmlFor="c-name" className={label}>{t("Name")}</label><input id="c-name" name="name" autoComplete="name" placeholder={t("Enter your name")} className={field} /></div>
@@ -56,11 +56,11 @@ export function Cta() {
               placeholder={t("Select an options")}
               options={["Google / Search", "Social media", "Referral", "Event", "Other"].map((o) => ({ value: o, label: t(o) }))}
               buttonClassName={field + " items-center"}
-              menuClassName="!text-navy-ink"
+              menuClassName="text-left"
             />
           </div>
           <div className="sm:col-span-2"><label htmlFor="c-msg" className={label}>{t("Message")}</label><textarea id="c-msg" name="message" rows={6} className={field + " h-auto py-4"} /></div>
-          <button type="submit" className="h-[56px] rounded-2xl bg-[#B0281B] text-[15px] font-medium text-white transition hover:brightness-110 sm:col-span-2">{t("Request Demo")}</button>
+          <button type="submit" className="h-[56px] rounded-2xl border border-white/20 bg-[#8F2419] text-[15px] font-semibold text-white shadow-lg transition hover:bg-[#751B12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white dark:border-white/70 dark:bg-white dark:text-[#8F2419] dark:hover:bg-orange-50 sm:col-span-2">{t("Request Demo")}</button>
         </form>
         <p role="status" className="mt-3 min-h-[20px] text-[13px] text-white/90">
           {status === "error" && t("Please fill in your name, a valid email, and how you found us.")}
