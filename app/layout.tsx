@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Socindex — Social Media Analytics & Brand Intelligence",
   description:
     "Socindex is a big data monitoring and reputation analysis platform powered by AI. Track mentions, understand sentiment, and make faster decisions.",
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: { url: "/logo.png", type: "image/png" }, apple: "/logo.png" },
   openGraph: {
     title: "Socindex — Brings Data and Sight Directly to Your Sight",
     description: "AI-powered social media analytics for media, government and businesses.",
