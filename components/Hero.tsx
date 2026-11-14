@@ -24,7 +24,7 @@ export function Hero() {
             {t("Social Media Analytics")}
           </span>
 
-          <h1 className="mt-6 text-[clamp(2.6rem,6vw,3.9rem)] font-bold leading-[1.05] tracking-[-0.02em] text-navy-ink dark:text-white">
+          <h1 className="mt-6 text-[clamp(2.6rem,6vw,3.9rem)] font-semi bold leading-[1.05] tracking-[-0.02em] text-navy-ink dark:text-white">
             {t("Turn Social Media Data")} <span className="text-brand">{t("Into Actionable Insights")}</span>
           </h1>
 
