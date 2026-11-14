@@ -80,8 +80,8 @@ export function TryItOut() {
         <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
           {d.metrics.map((m) => (
             <div key={m.label} className="overflow-hidden rounded-2xl glass pt-3">
-              <div className="flex items-start justify-between gap-2 px-4 text-[9.5px] text-[#7a8798] dark:text-white/50">
-                <b className="font-medium uppercase">{t(m.label)}</b><span className="hidden truncate text-right xl:block">{t(m.hint)}</span>
+              <div className="flex flex-col gap-0.5 px-4 text-[9.5px] leading-snug text-[#7a8798] dark:text-white/50 sm:flex-row sm:items-start sm:justify-between sm:gap-2">
+                <b className="font-medium uppercase">{t(m.label)}</b><span className="sm:text-right">{t(m.hint)}</span>
               </div>
               <div className="px-4 pb-1 pt-1 text-[24px] font-bold leading-tight text-navy-ink dark:text-white">{m.value}</div>
               <Spark data={m.series} color={m.color} />
