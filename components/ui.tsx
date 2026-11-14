@@ -4,10 +4,7 @@ import Image from "next/image";
 export function Logo({ className }: { className?: string }) {
   return (
     <a href="#home" className={cn("flex items-center gap-3", className)} aria-label="Socindex home">
-      <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden>
-        <path d="M9 2h14a7 7 0 0 1 7 7v14a7 7 0 0 1-7 7H9a7 7 0 0 1-7-7V9a7 7 0 0 1 7-7z" fill="#F15235" />
-        <path d="M8 21l5-6 4 3 7-8" fill="none" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
+      <Image src="/logo.png" alt="" width={36} height={36} className="h-9 w-9 shrink-0 object-contain" />
       <span className="text-[19px] font-normal tracking-tight text-ink">Socindex</span>
     </a>
   );
