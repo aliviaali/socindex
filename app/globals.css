@@ -55,43 +55,92 @@ section[id] { scroll-margin-top: 80px; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
-/* ---------- Glassmorphism ---------- */
+/* ---------- Glassmorphism (soft) ---------- */
+/* Frame (.glass-wrap, .glass-panel): kaca jelas — tepi terang bergradasi, isi kaca bening, blur, bayangan lebar.
+   Konten (.glass, .glass-soft, .glass-strong): kaca tipis & lembut, tanpa kilap tebal. */
 @layer components {
-  .glass, .glass-wrap, .glass-soft, .glass-strong {
-    --film-opacity: .32;
-    --glass-blur: 3px;
-    background: linear-gradient(135deg, rgb(255 255 255 / var(--glass-glint)), transparent 45%),
-      rgb(var(--glass-color) / var(--film-opacity));
+  .glass, .glass-soft, .glass-strong {
+    --film-opacity: .72;
+    --glass-blur: 4px;
+    background: linear-gradient(135deg, rgb(255 255 255 / .5), transparent 45%),
+      rgb(255 255 255 / var(--film-opacity));
     border: 1px solid rgb(var(--glass-edge) / .32);
-    box-shadow: inset 0 1px 1px rgb(255 255 255 / var(--glass-glint)), 0 10px 28px -16px rgb(10 37 49 / .32);
+    box-shadow: inset 0 1px 1px rgb(255 255 255 / .6), 0 10px 28px -16px rgb(10 37 49 / .3);
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(115%);
     backdrop-filter: blur(var(--glass-blur)) saturate(115%);
   }
-  .glass-wrap, .glass-soft {
-    --film-opacity: .16;
-    --glass-blur: 2px;
-  }
-  .glass-strong {
-    --film-opacity: .88;
-    --glass-blur: 7px;
-  }
-  .glass-panel {
-    --panel-white: 255 255 255;
-    --panel-shade: 84 94 102;
-    --panel-shine: .92;
+  .glass-soft { --film-opacity: .6; --glass-blur: 3px; }
+  .glass-strong { --film-opacity: .9; --glass-blur: 8px; }
+
+  .glass-wrap, .glass-panel {
     background:
-      linear-gradient(120deg, transparent 8%, rgb(var(--panel-white) / .52) 26%, transparent 42%),
-      radial-gradient(ellipse at 100% 0%, rgb(var(--panel-shade) / .075), transparent 48%),
-      rgb(var(--panel-white) / .74);
-    border: 1px solid rgb(var(--glass-edge) / .42);
-    box-shadow: inset 0 0 0 2px rgb(255 255 255 / var(--panel-shine)),
-      inset 0 -5px 16px rgb(var(--panel-shade) / .06), 0 14px 32px -20px rgb(21 35 45 / .32);
+      linear-gradient(125deg, rgb(255 255 255 / .75) 0%, rgb(255 255 255 / 0) 22%),
+      linear-gradient(315deg, rgb(120 175 195 / .22) 0%, rgb(190 220 232 / .14) 55%, rgb(235 245 250 / .10) 100%);
+    border: 1px solid rgb(95 140 158 / .55);
+    box-shadow:
+      inset 1.5px 1.5px 0 rgb(255 255 255 / .95),
+      inset -1.5px -1.5px 0 rgb(110 160 180 / .35),
+      inset 0 0 22px rgb(150 200 220 / .18),
+      0 26px 46px -22px rgb(21 70 92 / .45),
+      0 3px 10px rgb(21 70 92 / .10);
+    -webkit-backdrop-filter: blur(6px) saturate(160%);
+    backdrop-filter: blur(6px) saturate(160%);
   }
-  .dark .glass-panel {
-    --panel-white: 32 41 51;
-    --panel-shade: 210 219 224;
-    --panel-shine: .08;
+  /* Kaca jernih: blob/gambar di belakangnya tembus & terlihat. Pakai di kartu yang ada blob di belakangnya (Trusted, FAQ). */
+  .glass-clear {
+    background:
+      linear-gradient(125deg, rgb(255 255 255 / .7) 0%, rgb(255 255 255 / 0) 24%),
+      linear-gradient(315deg, rgb(120 175 195 / .16) 0%, rgb(255 255 255 / .08) 60%),
+      rgb(255 255 255 / .22);
+    border: 1px solid rgb(95 140 158 / .5);
+    box-shadow:
+      inset 1.5px 1.5px 0 rgb(255 255 255 / .95),
+      inset -1.5px -1.5px 0 rgb(110 160 180 / .3),
+      inset 0 0 22px rgb(150 200 220 / .15),
+      0 22px 40px -22px rgb(21 70 92 / .42),
+      0 2px 8px rgb(21 70 92 / .08);
+    -webkit-backdrop-filter: blur(5px) saturate(160%);
+    backdrop-filter: blur(5px) saturate(160%);
   }
+  /* Chip putih dengan outline jelas (daftar 1 2 3) */
+  .glass-white {
+    background: rgb(255 255 255 / .92);
+    border: 1px solid rgb(120 150 165 / .38);
+    box-shadow: 0 1px 0 rgb(255 255 255), 0 6px 14px -8px rgb(21 50 64 / .25);
+  }
+
+}
+
+/* ---- Dark mode ---- */
+.dark .glass, .dark .glass-soft, .dark .glass-strong {
+  background: rgb(var(--glass-color) / .5);
+  border: 1px solid rgb(255 255 255 / .1);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / .08), 0 8px 22px -14px rgb(0 0 0 / .6);
+}
+.dark .glass-soft { background: rgb(var(--glass-color) / .38); }
+.dark .glass-strong { background: rgb(var(--glass-color) / .85); }
+.dark .glass-wrap, .dark .glass-panel {
+  background: linear-gradient(140deg, rgb(255 255 255 / .12) 0%, rgb(255 255 255 / .04) 40%, rgb(120 160 180 / .10) 100%);
+  border: 1px solid rgb(255 255 255 / .16);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / .05),
+    inset 0 0 40px rgb(255 255 255 / .04),
+    0 24px 50px -24px rgb(0 0 0 / .7);
+}
+
+.dark .glass-clear {
+  background:
+    linear-gradient(125deg, rgb(255 255 255 / .12) 0%, rgb(255 255 255 / 0) 28%),
+    rgb(var(--glass-color) / .3);
+  border: 1px solid rgb(255 255 255 / .2);
+  box-shadow: inset 1px 1px 0 rgb(255 255 255 / .16), inset -1px -1px 0 rgb(0 0 0 / .3), 0 18px 36px -20px rgb(0 0 0 / .65);
+  -webkit-backdrop-filter: blur(5px) saturate(140%);
+  backdrop-filter: blur(5px) saturate(140%);
+}
+.dark .glass-white {
+  background: rgb(255 255 255 / .06);
+  border: 1px solid rgb(255 255 255 / .22);
+  box-shadow: none;
 }
 
 /* Hero background: peach (kiri) → sage (kanan) memudar ke putih, sesuai desain */
