@@ -32,7 +32,7 @@ export function Faq() {
               const isOpen = open === i;
               const id = `${base}-${i}`;
               return (
-                <div key={f.q} className="glass rounded-[14px] px-5 py-5 dark:!border-white/25 dark:!bg-[#2D3643]/80">
+                <div key={f.q} className="glass rounded-[14px] px-5 py-5">
                   <h3>
                     <button
                       type="button"
@@ -57,7 +57,7 @@ export function Faq() {
             })}
           </div>
 
-          <aside className="flex flex-col items-center glass rounded-[14px] px-6 py-10 dark:!border-white/25 dark:!bg-[#2D3643]/80">
+          <aside className="flex flex-col items-center glass-clear rounded-[14px] px-6 py-10">
             <svg width="58" height="52" viewBox="0 0 58 52" aria-hidden className="mt-4 text-black dark:text-white">
               <path d="M0 0h58v40H16L0 52z" fill="currentColor" />
             </svg>
