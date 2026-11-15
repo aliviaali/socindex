@@ -40,7 +40,7 @@ export function Trusted() {
           <Image src="/images/deco-wave-pink.png" alt="" aria-hidden width={500} height={500} className="pointer-events-none absolute -left-14 -top-3 z-0 hidden w-[130px] sm:block dark:opacity-80" />
           <figure key={i} className="relative z-10 flex animate-fadeUp flex-col glass-clear rounded-[28px] p-7 sm:p-9 lg:min-h-[372px]">
             <span className="grid h-[53px] w-[53px] place-items-center rounded-full bg-[#FFEEE8] text-brand dark:bg-[#3A211F]"><LuQuote size={22} fill="currentColor" /></span>
-            <blockquote className="my-5 text-justify text-[20px] font-semibold leading-[1.6] text-navy-ink dark:text-white sm:text-[17px]">
+              <blockquote className="my-5 text-justify text-[20px] font-semibold leading-[1.6] text-navy-ink dark:text-white">
               {tr(t.quote)}
             </blockquote>
             <figcaption className="mt-auto flex items-center justify-between gap-4">
