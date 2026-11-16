@@ -31,16 +31,16 @@ export function Trusted() {
 
         {/* strip logo (GIF animasi) */}
         <div className="relative mt-8 overflow-hidden rounded-[18px] bg-[#F6F7F9] dark:bg-white/[.04]">
-          <Image src="/motion/logo-brand.gif" alt="Astra International, Bank Indonesia, Pertamina, Telkom Indonesia, Komdigi" width={1134} height={102} unoptimized className="relative left-1/2 mx-auto h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:hidden" />
-          <Image src="/motion/logo_cloud_light_transparent.gif" alt="" aria-hidden width={1134} height={102} unoptimized className="relative left-1/2 mx-auto hidden h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:block" />
+          <Image src="/motion/logo-light.gif" alt="Astra International, Bank Indonesia, Pertamina, Telkom Indonesia, Komdigi" width={1134} height={102} unoptimized className="relative left-1/2 mx-auto h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:hidden" />
+          <Image src="/motion/logo-dark.gif" alt="" aria-hidden width={1134} height={102} unoptimized className="relative left-1/2 mx-auto hidden h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:block" />
         </div>
 
         <div className="relative mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[873fr_357fr]">
           {/* bola gelombang pink di belakang kartu testimoni (z-0), kartu kaca menimpanya */}
           <Image src="/images/deco-wave-pink.png" alt="" aria-hidden width={500} height={500} className="pointer-events-none absolute -left-14 -top-3 z-0 hidden w-[130px] sm:block dark:opacity-80" />
-          <figure key={i} className="relative z-10 flex animate-fadeUp flex-col glass-clear rounded-[28px] p-7 sm:p-9 lg:min-h-[372px]">
+          <figure key={i} className="relative z-10 flex animate-fadeUp flex-col glass-clear rounded-[20px] p-7 sm:p-9 lg:min-h-[372px]">
             <span className="grid h-[53px] w-[53px] place-items-center rounded-full bg-[#FFEEE8] text-brand dark:bg-[#3A211F]"><LuQuote size={22} fill="currentColor" /></span>
-              <blockquote className="my-5 text-justify text-[20px] font-semibold leading-[1.6] text-navy-ink dark:text-white">
+            <blockquote className="my-5 text-justify text-[18px] font-semibold leading-[1.6] text-navy-ink dark:text-white">
               {tr(t.quote)}
             </blockquote>
             <figcaption className="mt-auto flex items-center justify-between gap-4">
