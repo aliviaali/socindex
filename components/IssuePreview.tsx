@@ -23,7 +23,7 @@ export function IssuePreview() {
   const go = (d: number) => setSlide((v) => (v + d + total) % total);
 
   return (
-    <div className="glass-wrap relative rounded-[28px] p-5 sm:p-8 lg:p-10">
+    <div className="glass-wrap glass-panel relative rounded-[20px] p-5 sm:p-8 lg:p-10">
       {/* DATA DUMMY: lihat `issues` & `benefitSlides` di lib/content.ts. (apply api) nanti ganti dengan API dashboard. */}
       <Pill>{t("Analytics Features")}</Pill>
       <h2 className="mt-5 text-[clamp(1.8rem,3.4vw,2.4rem)] font-bold leading-[1.15] tracking-[-0.02em] text-navy-ink dark:text-white">
