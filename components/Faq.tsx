@@ -26,7 +26,7 @@ export function Faq() {
           {/* LAPIS 1 — bola teal di kanan, di belakang kaca */}
           <Image src="/images/deco-wave-teal.png" alt="" aria-hidden width={600} height={600} className="pointer-events-none absolute -right-20 -top-14 z-0 w-[170px] sm:w-[210px]" />
           {/* LAPIS 2 — kotak kaca menimpa bola; LAPIS 3 — konten */}
-          <div className="glass-wrap relative z-10 grid grid-cols-1 items-stretch gap-5 rounded-[24px] p-4 sm:p-6 lg:grid-cols-[1fr_335px] lg:gap-6">
+          <div className="glass-wrap relative z-10 grid grid-cols-1 items-stretch gap-5 rounded-[20px] p-4 sm:p-6 lg:grid-cols-[1fr_335px] lg:gap-6">
           <div className="space-y-3">
             {faqs.map((f, i) => {
               const isOpen = open === i;
