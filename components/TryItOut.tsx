@@ -53,8 +53,7 @@ export function TryItOut() {
 
   return (
     <div
-      id="try-it-out"
-      className="glass-wrap relative mt-12 scroll-mt-20 rounded-[28px] p-5 [--neg:#E0212F] [--neu:#4B5A6E] [--pos:#5AA9C4] dark:[--neu:#8391A7] dark:[--pos:#6CC3DE] sm:p-6 lg:mt-14 lg:p-7"
+      className="glass-wrap glass-panel relative rounded-[20px] p-5 [--neg:#E0212F] [--neu:#4B5A6E] [--pos:#5AA9C4] dark:[--neu:#8391A7] dark:[--pos:#6CC3DE] sm:p-6 lg:p-7"
     >
       {/* ===== Header: judul (kiri) + pilihan topik (kanan) ===== */}
       <div className="flex flex-col gap-3">
