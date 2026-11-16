@@ -22,7 +22,7 @@ export function ProblemSolution() {
                 {t("From Scattered Data to Clear Insights")}
               </h2>
             </div>
-            <p className="mt-4 text-[18px] leading-[1.6] text-[#7a8798] dark:text-white/45 lg:mt-12 lg:max-w-[330px] lg:text-[13px]">
+            <p className="mt-4 text-[14px] leading-[1.6] text-[#7a8798] dark:text-white/45 lg:mt-12 lg:max-w-[330px] lg:text-[13px]">
               {t("A single intelligence layer transforms fragmented conversations into a clear, live view of reputation and performance.")}
             </p>
           </div>
@@ -63,7 +63,7 @@ export function ProblemSolution() {
             </div>
 
             {/* SOLUTION (kaca) */}
-            <div className="glass-wrap glass-panel rounded-b-[28px] p-6 lg:rounded-l-none lg:rounded-r-[28px] sm:p-8 lg:min-h-[430px]">
+            <div className="glass-wrap glass-panel rounded-b-[20px] p-6 lg:rounded-l-none lg:rounded-r-[20px] sm:p-8 lg:min-h-[430px]">
               <div className="flex items-center gap-4">
                 <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-[#DFF5E7] text-[#12a150] dark:bg-[#12a150]/25"><LuSparkles size={20} /></span>
                 <div>
