@@ -57,13 +57,13 @@ export function Faq() {
             })}
           </div>
 
-          <aside className="flex flex-col items-center glass-clear rounded-[14px] px-6 py-10">
-            <svg width="58" height="52" viewBox="0 0 58 52" aria-hidden className="mt-4 text-black dark:text-white">
+          <aside className="flex flex-col items-center rounded-[14px] border border-line bg-surface px-6 py-10 text-ink shadow-soft dark:shadow-[0_8px_24px_-10px_rgba(0,0,0,.48)]">
+            <svg width="58" height="52" viewBox="0 0 58 52" aria-hidden className="mt-4">
               <path d="M0 0h58v40H16L0 52z" fill="currentColor" />
             </svg>
             <div className="mt-8 w-full lg:px-3">
-              <h3 className="max-w-[170px] text-[17px] font-bold leading-[1.35] text-black dark:text-white">{t("Do you have more questions?")}</h3>
-              <p className="mt-6 text-justify text-[13.5px] leading-[1.55] text-black/90 dark:text-white/75">
+              <h3 className="max-w-[170px] text-[17px] font-bold leading-[1.35]">{t("Do you have more questions?")}</h3>
+              <p className="mt-6 text-justify text-[13.5px] leading-[1.55] text-ink/90">
                 {t("Let’s discuss how Socindex can help track your brand reputation. Contact us directly for a quick chat.")}
               </p>
             </div>
