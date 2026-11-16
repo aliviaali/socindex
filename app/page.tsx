@@ -19,15 +19,19 @@ export default function Page() {
       <main>
         <Hero />
         <ProblemSolution />
-        <section className="overflow-x-clip bg-page pb-4 pt-8 lg:pt-12">
+        <section id="features" className="overflow-x-clip bg-page">
           <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-0">
             <Features />
           </div>
         </section>
         <HowItWorks />
-        <section className="overflow-x-clip bg-page pb-16 lg:pb-[80px]">
+        <section className="overflow-x-clip bg-page">
           <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-0">
             <IssuePreview />
+          </div>
+        </section>
+        <section id="try-it-out" className="overflow-x-clip bg-page">
+          <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-0">
             <TryItOut />
           </div>
         </section>
