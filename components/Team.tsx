@@ -9,7 +9,7 @@ export function Team() {
   return (
     <section id="team" className="bg-page py-16 lg:py-[80px]">
       <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-0">
-        <div className="glass-wrap glass-panel rounded-[28px] p-6 sm:p-10">
+        <div className="glass-wrap glass-panel rounded-[20px] p-6 sm:p-10">
           <span className="text-[11px] font-semibold uppercase tracking-wide text-[#0e81c2]">{t("Meet the team")}</span>
           <h2 className="mt-3 text-[clamp(1.8rem,3.4vw,2.4rem)] font-bold leading-[1.15] tracking-[-0.02em] text-navy-ink dark:text-white">
             {t("The people behind clearer decisions")}
