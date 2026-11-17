@@ -106,8 +106,7 @@ export const benefitSlides = [
 export const testimonials = [
   {
     quote: "\"It is quite easy to use this dashboard and quite easy to understand, but sometimes there are down times which are a bit annoying and can be fixed in the system.\"",
-    name: "Farhan",
-    org: "Telkom Indonesia",
+    name: "Telkom Indodnesia",
     avatar: "/images/testimonial-farhan.jpg",
     rating: 5,
   },
