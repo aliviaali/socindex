@@ -20,7 +20,7 @@ const id: Record<string, string> = {
   // Hero
   "Social Media Analytics": "Analitik Media Sosial",
   "Turn Social Media Data": "Ubah Data Media Sosial",
-  "Into Actionable Insights": "Menjadi Wawasan Siap Aksi",
+  "Into Actionable Insights": "Menjadi Wawasan yang Dapat Ditindaklanjuti",
   "Monitor your brand reputation, analyze social media performance, and uncover meaningful insights with Socindex’s AI-powered analytics platform.":
     "Pantau reputasi merek Anda, analisis kinerja media sosial, dan temukan wawasan bermakna dengan platform analitik berbasis AI dari Socindex.",
   "Start Free Trial": "Mulai Uji Coba Gratis", "See how it works": "Lihat cara kerjanya",
@@ -31,7 +31,7 @@ const id: Record<string, string> = {
   "A single intelligence layer transforms fragmented conversations into a clear, live view of reputation and performance.":
     "Satu lapisan intelijen mengubah percakapan yang terfragmentasi menjadi gambaran reputasi dan kinerja yang jelas dan real-time.",
   "Before Socindex": "Sebelum Socindex", "The Problem": "Masalahnya", "With Socindex": "Bersama Socindex", "Our Solution": "Solusi Kami",
-  "Decision latency": "Keterlambatan keputusan", "Days → weeks": "Hari → minggu", "Real-time": "Tepat Waktu", "Transform": "Transformasi",
+  "Decision latency": "Keterlambatan keputusan", "Days → weeks": "Hari → minggu", "Real-time": "Waktu nyata", "Transform": "Transformasi",
   "Data from multiple social media platforms is scattered and hard to analyze.": "Data dari berbagai platform media sosial tersebar dan sulit dianalisis.",
   "Manual processing takes a lot of time and is prone to human error.": "Pemrosesan manual memakan banyak waktu dan rawan kesalahan manusia.",
   "It's difficult to monitor brand reputation and public sentiment in real-time.": "Sulit memantau reputasi merek dan sentimen publik secara real-time.",
@@ -48,13 +48,11 @@ const id: Record<string, string> = {
   "Monitor mentions, trends, and conversations in real time. Get accurate data updates from multiple social platforms. Make quick business decisions based on public opinion dynamics.":
     "Pantau sebutan, tren, dan percakapan secara real-time. Dapatkan pembaruan data akurat dari berbagai platform sosial. Ambil keputusan bisnis cepat berdasarkan dinamika opini publik.",
   "AI Tool, Human Quality": "Alat AI, Kualitas Manusia",
-  "Combine the speed of artificial intelligence analysis with expert verification. Maintain data accuracy rates of up to 98 percent. Generate reliable, in-depth insights for corporate strategy.":
-    "Gabungkan kecepatan analisis kecerdasan buatan dengan verifikasi ahli. Pertahankan tingkat akurasi data hingga 98 persen. Hasilkan wawasan yang andal dan mendalam untuk strategi perusahaan.",
   "Up to 98% accuracy with human verification.":
     "Akurasi hingga 98% dengan verifikasi oleh manusia.",
   "Comprehensive Analytics": "Analitik Komprehensif",
   "Access comprehensive analytics reports, data visualizations, and executive summaries. Provide in-depth metrics to support your team's strategic direction. Accelerate data-driven decision-making.":
-    "Akses laporan analitik komprehensif, visualisasi data, dan ringkasan eksekutif. Berikan metrik mendalam untuk mendukung arah strategis tim Anda. Percepat pengambilan keputusan berbasis data.",
+    "Akses laporan analitik lengkap, visualisasi data, dan ringkasan eksekutif. Sajikan metrik mendalam untuk mendukung arah strategis tim Anda. Percepat pengambilan keputusan berbasis data.",
   "Social Network Analysis Mapping": "Pemetaan Analisis Jaringan Sosial",
   "Consolidate data streams from multiple social media platforms and online sources. Manage all digital monitoring in a single, integrated workspace. Eliminate data silos for organizational operational efficiency.":
     "Gabungkan aliran data dari banyak platform media sosial dan sumber daring. Kelola seluruh pemantauan digital dalam satu ruang kerja terpadu. Hilangkan silo data demi efisiensi operasional organisasi.",
@@ -184,20 +182,32 @@ const id: Record<string, string> = {
     "“Laporan disajikan secara real-time, akurat, dan mudah ditindaklanjuti, terutama saat muncul isu strategis yang berpotensi menjadi krisis. Respons cepat dan wawasan tajam mereka sangat membantu kami mengambil keputusan yang tepat dan terukur.”",
   // Issue preview
   "Dummy data • Top issues by conversation volume • Last 7 days": "Data contoh • Isu teratas berdasarkan volume percakapan • 7 hari terakhir",
-  "DATA": "DATA", "Total Volume": "Total Volume", "vs 7 days ago": "dibanding 7 hari lalu",
+  "DATA": "DATA", "Total Volume": "Volume total", "vs 7 days ago": "dibanding 7 hari lalu",
   "Average Sentiment": "Rata-rata Sentimen", "Netral": "Netral", "Stable": "Stabil", "Stable Trend": "Tren Stabil",
-  "Top Platform": "Platform Teratas", "Dominan": "Dominan", "64% share": "64% pangsa",
+  "Top Platform": "Platform Teratas", "Dominant": "Dominan", "64% share": "64% pangsa",
   "Fuel Price Increase": "Kenaikan Harga BBM", "Transportation Policy Discussion": "Diskusi Kebijakan Transportasi",
   "Prabowo's Cabinet Reshuffle": "Reshuffle Kabinet Prabowo", "Mining Regulations Debate": "Perdebatan Regulasi Pertambangan",
   "Transportation • 2 hours ago": "Transportasi • 2 jam lalu", "Politics • 4 hours ago": "Politik • 4 jam lalu",
   "Politics • 5 hours ago": "Politik • 5 jam lalu", "Environment • 1 day ago": "Lingkungan • 1 hari lalu",
   "positive": "positif", "neutral": "netral", "negative": "negatif",
+  "Social Network": "Jejaring sosial",
+  "Network": "Jaringan",
+  "Stats": "Statistik",
+  "Pan up": "Geser ke atas",
+  "Pan down": "Geser ke bawah",
+  "Pan right": "Geser ke kanan",
+  "Pan left": "Geser ke kiri",
+  "Zoom in": "Perbesar",
+  "Zoom out": "Perkecil",
+  "See All": "Lihat semua",
+  "\"It is quite easy to use this dashboard and quite easy to understand, but sometimes there are down times which are a bit annoying and can be fixed in the system.\"": "“Dasbor ini cukup mudah digunakan dan dipahami. Namun, layanan terkadang terhenti. Hal itu cukup mengganggu dan semoga bisa diperbaiki.”",
+  "“In today's digital age, public perception can change in a matter of minutes. Socindex has been a crucial partner in supporting our communications strategy, particularly in social media monitoring and public sentiment analysis. Reports are presented in real time, accurate, and easily actionable, especially when strategic issues arise that could potentially escalate into crises. Their rapid response and sharp insights significantly assist us in making informed and measured decisions.”": "“Di era digital saat ini, persepsi publik bisa berubah dalam hitungan menit. Socindex menjadi mitra penting dalam mendukung strategi komunikasi kami, terutama dalam pemantauan media sosial dan analisis sentimen publik. Laporan tersedia secara langsung, akurat, dan mudah ditindaklanjuti, terutama saat muncul isu strategis yang berpotensi menjadi krisis. Respons cepat dan analisis yang tajam membantu kami mengambil keputusan yang tepat dan terukur.”",
   // Try It Out
   "Try It Out": "Coba Sekarang", "Turning Conversations Into Strategic Action": "Mengubah Percakapan Menjadi Aksi Strategis",
   "Select Topic:": "Pilih Topik:", "Select topic": "Pilih topik",
   "TALK": "PERCAKAPAN",
-  "Total comments, likes, shares, and views": "Jumlah komentar, suka, bagikan, dan tayangan", "Total posts and comments": "Total unggahan dan komentar",
-  "Total likes": "Total suka", "People reached": "Orang terjangkau",
+  "Total comments, likes, shares, and views": "Jumlah komentar, tanda suka, kali dibagikan, dan tayangan", "Total posts and comments": "Total unggahan dan komentar",
+  "Total likes": "Jumlah tanda suka", "People reached": "Jumlah orang yang dijangkau",
   "Total Sentiment": "Total Sentimen", "Sentiment split": "Rincian sentimen",
   "Positive": "Positif", "Neutral": "Netral", "Negative": "Negatif",
   "Data Source": "Sumber Data", "posts": "unggahan", "View All": "Lihat Semua", "Word Cloud": "Awan Kata",
@@ -209,7 +219,33 @@ const id: Record<string, string> = {
   "Already a subscriber?": "Sudah berlangganan?", "Sign in": "Masuk",
 };
 
-const dictionaries: Record<Lang, Record<string, string>> = { en: {}, id };
+// Some components still pass older copy as the translation key.
+const en: Record<string, string> = {
+  "Netral": "Neutral",
+  "Dominan": "Dominant",
+  "Select an options": "Select an option",
+  "Building Smarter Social Media Intelligences": "Building Smarter Social Media Intelligence",
+  "Socindex is a BIG DATA MONITORING tools. Designed to help organizations and businesses analyze social media data with advanced AI and machine learning technology.": "Socindex is an AI-powered social media monitoring and analytics platform that helps organizations understand conversations, measure public sentiment, and manage brand reputation across Facebook, X, Instagram, Threads, TikTok, LinkedIn, and Google Reviews.",
+  "A Big Data Monitoring and reputation analysis platform based on Artificial Intelligence (AI) and Deep Learning. This platform is specifically designed to monitor, track, and analyze the performance and reputation of an organization or brand on social media and mass media.": "Socindex is an AI-powered social media monitoring and analytics platform that helps organizations understand conversations, measure public sentiment, and manage brand reputation across Facebook, X, Instagram, Threads, TikTok, LinkedIn, and Google Reviews.",
+  "More than 500+ Agency and companies already use Socindex to manage their social media intelligence": "More than 500 agencies and companies use Socindex to monitor and analyze social media.",
+  "Data accuracy": "Automated accuracy",
+  "Data Accuracy": "Automated accuracy",
+  "Guided support": "24/7 support",
+  "Combine the speed of artificial intelligence analysis with expert verification. Maintain data accuracy rates of up to 98 percent. Generate reliable, in-depth insights for corporate strategy.": "Up to 98% accuracy with human verification.",
+  "Access comprehensive analytics reports, data visualizations, and executive summaries. Provide in depth metrics to support your team's strategic direction. Accelerate data-driven decision-making.": "Access comprehensive analytics reports, data visualizations, and executive summaries. Provide in-depth metrics to support your team's strategic direction. Accelerate data-driven decision-making.",
+  "Ai Powered": "AI-powered",
+  "Platform dominant": "Dominant platform",
+  "Volume issue": "Issue volume",
+  "Faster Decision": "Faster decisions",
+  "Trusted by Agency, Government & Company": "Trusted by agencies, government bodies, and companies",
+  "We’d love to know, how did you first discover our company ? *": "How did you first hear about us? *",
+  "Unlock the full data source Analysis": "Unlock the full data source analysis",
+};
+
+function translate(lang: Lang, key: string): string {
+  const english = en[key] ?? key;
+  return lang === "en" ? english : id[english] ?? id[key] ?? english;
+}
 
 type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: (s: string) => string };
 const LangCtx = createContext<Ctx>({ lang: "en", setLang: () => {}, t: (s) => s });
@@ -233,7 +269,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     setLangState(l);
     try { localStorage.setItem("socindex-lang", l); } catch {}
   };
-  const t = (s: string) => dictionaries[lang][s] ?? s;
+  const t = (s: string) => translate(lang, s);
 
   return <LangCtx.Provider value={{ lang, setLang, t }}>{children}</LangCtx.Provider>;
 }
