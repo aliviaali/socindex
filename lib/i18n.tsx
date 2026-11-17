@@ -48,11 +48,13 @@ const id: Record<string, string> = {
   "Monitor mentions, trends, and conversations in real time. Get accurate data updates from multiple social platforms. Make quick business decisions based on public opinion dynamics.":
     "Pantau sebutan, tren, dan percakapan secara real-time. Dapatkan pembaruan data akurat dari berbagai platform sosial. Ambil keputusan bisnis cepat berdasarkan dinamika opini publik.",
   "AI Tool, Human Quality": "Alat AI, Kualitas Manusia",
+  "Combine the speed of artificial intelligence analysis with expert verification. Maintain data accuracy rates of up to 98 percent. Generate reliable, in-depth insights for corporate strategy.":
+    "Gabungkan kecepatan analisis kecerdasan buatan dengan verifikasi ahli. Pertahankan tingkat akurasi data hingga 98 persen. Hasilkan wawasan yang andal dan mendalam untuk strategi perusahaan.",
   "Up to 98% accuracy with human verification.":
     "Akurasi hingga 98% dengan verifikasi oleh manusia.",
   "Comprehensive Analytics": "Analitik Komprehensif",
   "Access comprehensive analytics reports, data visualizations, and executive summaries. Provide in-depth metrics to support your team's strategic direction. Accelerate data-driven decision-making.":
-    "Akses laporan analitik lengkap, visualisasi data, dan ringkasan eksekutif. Sajikan metrik mendalam untuk mendukung arah strategis tim Anda. Percepat pengambilan keputusan berbasis data.",
+    "Akses laporan analitik komprehensif, visualisasi data, dan ringkasan eksekutif. Berikan metrik mendalam untuk mendukung arah strategis tim Anda. Percepat pengambilan keputusan berbasis data.",
   "Social Network Analysis Mapping": "Pemetaan Analisis Jaringan Sosial",
   "Consolidate data streams from multiple social media platforms and online sources. Manage all digital monitoring in a single, integrated workspace. Eliminate data silos for organizational operational efficiency.":
     "Gabungkan aliran data dari banyak platform media sosial dan sumber daring. Kelola seluruh pemantauan digital dalam satu ruang kerja terpadu. Hilangkan silo data demi efisiensi operasional organisasi.",
