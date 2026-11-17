@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa6";
+import { FaInstagram, FaThreads, FaTiktok } from "react-icons/fa6";
 import { LuCreditCard, LuHeadset, LuZap } from "react-icons/lu";
 import { GlassSelect } from "@/components/GlassSelect";
 import { Logo } from "@/components/ui";
@@ -26,7 +26,7 @@ export function Cta() {
     setSource("");
   }
 
-  const field = "h-[56px] w-full rounded-2xl border border-white/30 bg-white/15 backdrop-blur-md px-5 text-[14px] text-white outline-none placeholder:text-white/80 focus:border-white/60";
+  const field = "h-[56px] w-full rounded-2xl border border-white/30 bg-white/15 backdrop-blur-[3px] px-5 text-[14px] text-white outline-none placeholder:text-white/80 focus:border-white/60";
   const label = "mb-2 block text-left text-[14px] font-bold";
 
   return (
@@ -53,7 +53,7 @@ export function Cta() {
               name="source"
               value={source}
               onChange={setSource}
-              placeholder={t("Select an options")}
+              placeholder={t("Select an option")}
               options={["Google / Search", "Social media", "Referral", "Event", "Other"].map((o) => ({ value: o, label: t(o) }))}
               buttonClassName={field + " items-center"}
               menuClassName="text-left"
@@ -90,10 +90,9 @@ export function Footer() {
   const { t } = useLang();
   const year = new Date().getFullYear();
   const social = [
-    { label: "LinkedIn", icon: FaLinkedin, href: "#" },
-    { label: "Facebook", icon: FaFacebook, href: "#" },
-    { label: "Instagram", icon: FaInstagram, href: "#" },
-    { label: "YouTube", icon: FaYoutube, href: "#" },
+    { label: "Instagram", icon: FaInstagram, href: "https://www.instagram.com/socindex.id" },
+    { label: "Threads", icon: FaThreads, href: "https://www.threads.com/@socindex.id" },
+    { label: "TikTok", icon: FaTiktok, href: "https://www.tiktok.com/@socindex.id" },
   ];
   return (
     <footer className="bg-white dark:bg-page">
