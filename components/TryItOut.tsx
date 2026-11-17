@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState, type CSSProperties } from "react";
-import { LuArrowRight, LuEllipsis, LuGrid3X3, LuShare2 } from "react-icons/lu";
+import { Area, AreaChart, ResponsiveContainer, Tooltip } from "recharts";
+import { LuArrowRight, LuGrid3X3, LuShare2 } from "react-icons/lu";
 import { FaInstagram, FaTiktok, FaThreads, FaYoutube, FaXTwitter } from "react-icons/fa6";
 import { GlassSelect } from "@/components/GlassSelect";
 import { NetworkGraph } from "@/components/NetworkGraph";
@@ -16,15 +17,28 @@ const darkWordColors = ["#FBBF24", "#60A5FA", "#E2E8F0", "#FB923C", "#4ADE80", "
 const srcIcon = { Tiktok: FaTiktok, Instagram: FaInstagram, Threads: FaThreads, Youtube: FaYoutube, Twitter: FaXTwitter } as const;
 const C = { pos: "#5AA9C4", neu: "#4B5A6E", neg: "#E0212F" };
 
-function Spark({ data, color }: { data: number[]; color: string }) {
-  const w = 240, h = 40, max = Math.max(...data), min = Math.min(...data);
-  const pts = data.map((v, i) => [(i / (data.length - 1)) * w, h - 4 - ((v - min) / (max - min || 1)) * (h - 12)]);
-  const line = pts.map((p, i) => `${i ? "L" : "M"}${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join(" ");
+function MetricAreaChart({ data, color, label }: { data: number[]; color: string; label: string }) {
+  const peak = Math.max(...data);
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} className="h-10 w-full" preserveAspectRatio="none" aria-hidden>
-      <path d={`${line} L${w} ${h} L0 ${h} Z`} fill={color} opacity=".12" />
-      <path d={line} fill="none" stroke={color} strokeWidth="1.5" />
-    </svg>
+    <ResponsiveContainer width="100%" height={40} minWidth={0}>
+      <AreaChart accessibilityLayer title={label} data={data.map(value => ({ value }))} margin={{ top: 6, right: 6, bottom: 5, left: 6 }}>
+        <Tooltip cursor={false} labelStyle={{ display: "none" }} wrapperStyle={{ zIndex: 1 }} position={{ y: 0 }}
+          contentStyle={{ fontSize: 10, padding: "2px 6px", borderRadius: 6 }} />
+        <Area type="natural" dataKey="value" name={label} stroke={color} strokeWidth={1.5}
+          fill={color} fillOpacity={0.4} isAnimationActive={false} activeDot={false}
+          dot={({ cx, cy, index }) => {
+            const isPeak = data[index] === peak;
+            return (
+              <circle
+                key={index} cx={cx} cy={cy} r={isPeak ? 4 : 2.5}
+                fill={isPeak ? color : `color-mix(in srgb, ${color} 46%, #84909c)`}
+                stroke="rgb(var(--surface))" strokeWidth={1}
+              />
+            );
+          }}
+        />
+      </AreaChart>
+    </ResponsiveContainer>
   );
 }
 
@@ -34,7 +48,7 @@ export function TryItOut() {
   const [topicId, setTopicId] = useState<string>(topics[0].id);
   const [d, setD] = useState<TopicData>(defaultTopicData);
   const [loading, setLoading] = useState(false);
-  const [locked, setLocked] = useState(false); // notifikasi "Unlock content" (View All, See All, tab Network/Stats)
+  const [locked, setLocked] = useState(false);
 
   useEffect(() => {
     let alive = true;
@@ -76,14 +90,14 @@ export function TryItOut() {
 
       <div aria-busy={loading} className={cn("mt-4 space-y-3 transition", loading && "opacity-60")}>
         {/* ===== 4 metrik dalam satu baris ===== */}
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <div className="grid auto-rows-fr grid-cols-2 gap-3 lg:grid-cols-4">
           {d.metrics.map((m) => (
-            <div key={m.label} className="overflow-hidden rounded-2xl glass pt-3">
+            <div key={m.label} className="glass flex min-w-0 flex-col overflow-hidden rounded-2xl pt-3">
               <div className="flex flex-col gap-0.5 px-4 text-[9.5px] leading-snug text-[#7a8798] dark:text-white/50 sm:flex-row sm:items-start sm:justify-between sm:gap-2">
                 <b className="font-medium uppercase">{t(m.label)}</b><span className="sm:text-right">{t(m.hint)}</span>
               </div>
-              <div className="px-4 pb-1 pt-1 text-[24px] font-bold leading-tight text-navy-ink dark:text-white">{m.value}</div>
-              <Spark data={m.series} color={m.color} />
+              <div className="mt-auto px-4 pb-1 pt-1 text-[24px] font-bold leading-tight text-navy-ink dark:text-white">{m.value}</div>
+              <MetricAreaChart data={m.series} color={m.color} label={t(m.label)} />
             </div>
           ))}
         </div>
@@ -146,14 +160,7 @@ export function TryItOut() {
             <div className="glass rounded-2xl p-4">
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2.5 text-[14px] font-semibold text-navy-ink dark:text-white"><LuShare2 size={17} />{t("Social Network")}</div>
-                <div className="flex items-center gap-2">
-                  {/* menyentuh tab Network / Stats memunculkan notifikasi berlangganan */}
-                  <div role="group" aria-label={t("Social Network")} className="flex rounded-full bg-[#EEF0F4] p-0.5 text-[11px] font-semibold dark:bg-white/10">
-                    <button type="button" onClick={() => setLocked(true)} className="rounded-full bg-navy px-3 py-1 text-white dark:bg-white dark:text-navy-ink">{t("Network")}</button>
-                    <button type="button" onClick={() => setLocked(true)} className="rounded-full px-3 py-1 text-[#566274] dark:text-white/70">{t("Stats")}</button>
-                  </div>
-                  <span className="grid h-7 w-7 place-items-center rounded-full text-[#7a8798] dark:text-white/60" aria-hidden><LuEllipsis size={16} /></span>
-                </div>
+                <button type="button" onClick={() => setLocked(true)} className="rounded-full bg-navy px-3 py-1 text-[11px] font-semibold text-white dark:bg-white dark:text-navy-ink">{t("Network")}</button>
               </div>
               <div className="mt-2"><NetworkGraph seed={topicId} /></div>
             </div>
