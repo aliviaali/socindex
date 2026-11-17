@@ -16,7 +16,7 @@ export function Hero() {
       {/* kabut peach lembut di kiri-bawah (light mode) */}
       <div aria-hidden className="pointer-events-none absolute -left-40 bottom-0 h-[420px] w-[520px] rounded-full bg-[#FBE3D6]/60 blur-3xl dark:hidden" />
 
-      <div className="relative mx-auto grid grid-cols-1 max-w-page items-center gap-12 px-4 py-16 sm:px-6 lg:min-h-[calc(100svh-81px)] lg:grid-cols-[minmax(0,470px)_minmax(0,1fr)] lg:gap-0 lg:px-0 lg:py-0">
+      <div className="relative mx-auto grid grid-cols-1 max-w-page items-center gap-12 px-4 py-16 sm:px-6 lg:min-h-[calc(100svh-81px)] lg:grid-cols-[minmax(0,470px)_minmax(0,1fr)] lg:gap-0 lg:px-0 lg:py-16">
         {/* kolom teks */}
         <div className="animate-fadeUp">
           <span className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-white px-3.5 py-2 text-[11px] font-bold uppercase tracking-wide text-brand shadow-sm dark:border-transparent dark:bg-[#2c1f22]">
