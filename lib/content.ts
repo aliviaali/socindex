@@ -1,5 +1,5 @@
 /**
- * Semua teks & data halaman ada di sini supaya mudah diedit tanpa menyentuh komponen.
+ * *Semua teks & data halaman ada di sini supaya mudah diedit tanpa menyentuh komponen.
  */
 
 export const navLight = [
