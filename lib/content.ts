@@ -106,20 +106,20 @@ export const benefitSlides = [
 export const testimonials = [
   {
     quote: "\"It is quite easy to use this dashboard and quite easy to understand, but sometimes there are down times which are a bit annoying and can be fixed in the system.\"",
-    name: "Telkom Indodnesia",
-    avatar: "/images/testimonial-farhan.jpg",
+    name: "Telkom Indonesia",
+    avatar: "/images/testimonial-logo-telkom.png",
     rating: 5,
   },
   {
-    quote: "\"It is quite easy to use this dashboard and quite easy to understand, but sometimes there are down times which are a bit annoying and can be fixed in the system.\"",
-    name: "Telkom Indodnesia",
-    avatar: "/images/testimonial-farhan.jpg",
+    quote: "“So far, it has been very helpful in completing our work related to media, both for monitoring, evaluation, monitoring current issues which we can later use to create media releases, create studies from the media exposure side, create reports to the board of directors, create reports required by regulators and others.”",
+    name: "Bank Jateng",
+    avatar: "/images/testimonial-logo-bank-jateng.png",
     rating: 5,
   },
   {
-    quote: "\"It is quite easy to use this dashboard and quite easy to understand, but sometimes there are down times which are a bit annoying and can be fixed in the system.\"",
-    name: "Telkom Indodnesia",
-    avatar: "/images/testimonial-farhan.jpg",
+    quote: "“In today's digital age, public perception can change in a matter of minutes. Socindex has been a crucial partner in supporting our communications strategy, particularly in social media monitoring and public sentiment analysis. Reports are presented in real time, accurate, and easily actionable, especially when strategic issues arise that could potentially escalate into crises. Their rapid response and sharp insights significantly assist us in making informed and measured decisions.”",
+    name: "Pertamina Persero",
+    avatar: "/images/testimonial-logo-pertamina.png",
     rating: 5,
   },
 ];
