@@ -27,7 +27,7 @@ export const pillars = ["One data source", "AI-powered analysis", "Clear dashboa
 
 export const features = [
   { icon: "radio", title: "Real-time Monitoring", desc: "Monitor mentions, trends, and conversations in real time. Get accurate data updates from multiple social platforms. Make quick business decisions based on public opinion dynamics." },
-  { icon: "brain", title: "AI Tool, Human Quality", desc: "Combine the speed of artificial intelligence analysis with expert verification. Maintain data accuracy rates of up to 98 percent. Generate reliable, in-depth insights for corporate strategy." },
+  { icon: "brain", title: "AI Tool, Human Quality", desc: "Combine speed and human-verified precision for up to 98% accuracy. Deliver executive-grade social intelligence you can confidently trust." },
   { icon: "chart", title: "Comprehensive Analytics", desc: "Access comprehensive analytics reports, data visualizations, and executive summaries. Provide in depth metrics to support your team's strategic direction. Accelerate data-driven decision-making." },
   { icon: "devices", title: "Social Network Analysis Mapping", desc: "Consolidate data streams from multiple social media platforms and online sources. Manage all digital monitoring in a single, integrated workspace. Eliminate data silos for organizational operational efficiency." },
   { icon: "layout", title: "Customizable Reports", desc: "Focus on key metrics that align with your company's business objectives. Flexibly customize report formats to meet the needs of your team and stakeholders. Present crucial data professionally and accurately." },
