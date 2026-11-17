@@ -48,7 +48,8 @@ const id: Record<string, string> = {
   "Monitor mentions, trends, and conversations in real time. Get accurate data updates from multiple social platforms. Make quick business decisions based on public opinion dynamics.":
     "Pantau sebutan, tren, dan percakapan secara real-time. Dapatkan pembaruan data akurat dari berbagai platform sosial. Ambil keputusan bisnis cepat berdasarkan dinamika opini publik.",
     "AI Tool, Human Quality": "Alat AI, Kualitas Manusia",
-  "Combine speed and human-verified precision for up to 98% accuracy. Deliver executive-grade social intelligence you can confidently trust.": "Gabungkan kecepatan dan ketelitian yang diverifikasi manusia untuk akurasi hingga 98%. Berikan intelijen sosial tingkat eksekutif yang dapat Anda percayai sepenuhnya.",
+  "Combine speed and human-verified precision for up to 98% accuracy. Deliver executive-grade social intelligence you can confidently trust.": 
+  "Gabungkan kecepatan dan ketelitian yang diverifikasi manusia untuk akurasi hingga 98%. Berikan intelijen sosial tingkat eksekutif yang dapat Anda percayai sepenuhnya.",
   "Comprehensive Analytics": "Analitik Komprehensif",
   "Access comprehensive analytics reports, data visualizations, and executive summaries. Provide in-depth metrics to support your team's strategic direction. Accelerate data-driven decision-making.":
     "Akses laporan analitik lengkap, visualisasi data, dan ringkasan eksekutif. Sajikan metrik mendalam untuk mendukung arah strategis tim Anda. Percepat pengambilan keputusan berbasis data.",
