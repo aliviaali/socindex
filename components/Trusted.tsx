@@ -25,14 +25,14 @@ export function Trusted() {
             {tr("Trusted by Agency, Government & Company")}
           </h2>
           <p className="mx-auto mt-4 max-w-[760px] text-[14px] text-[#7a8798] dark:text-white/45 font-normal">
-            {tr("More than 500+ Agency and companies already use Socindex to manage their social media intelligence")}
+            {tr("More than 500 agencies and companies use Socindex to monitor and analyze social media.")}
           </p>
         </div>
 
         {/* strip logo (GIF animasi) */}
         <div className="relative mt-8 overflow-hidden rounded-[18px] bg-[#F6F7F9] dark:bg-white/[.04]">
-          <Image src="/motion/logo-brand.gif" alt="Astra International, Bank Indonesia, Pertamina, Telkom Indonesia, Komdigi" width={1134} height={102} unoptimized className="relative left-1/2 mx-auto h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:hidden" />
-          <Image src="/motion/logo_cloud_light_transparent.gif" alt="" aria-hidden width={1134} height={102} unoptimized className="relative left-1/2 mx-auto hidden h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:block" />
+          <Image src="/motion/logo-light.gif" alt="Astra International, Bank Indonesia, Pertamina, Telkom Indonesia, Komdigi" width={1134} height={102} unoptimized className="relative left-1/2 mx-auto h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:hidden" />
+          <Image src="/motion/logo-dark.gif" alt="" aria-hidden width={1134} height={102} unoptimized className="relative left-1/2 mx-auto hidden h-auto w-full min-w-[760px] max-w-[1142px] -translate-x-1/2 dark:block" />
         </div>
 
         <div className="relative mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[873fr_357fr]">
@@ -44,13 +44,10 @@ export function Trusted() {
               {tr(t.quote)}
             </blockquote>
             <figcaption className="mt-auto flex items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <Image src={t.avatar} alt={t.name} width={42} height={42} className="h-[42px] w-[42px] rounded-full object-cover" />
-                <div>
-                  <div className="text-[13px] font-bold text-navy-ink dark:text-white">{t.name}</div>
-                  <div className="text-[11px] text-[#7a8798] dark:text-white/45">{t.org}</div>
-                </div>
-              </div>
+              <span className="inline-flex items-center gap-3 text-[13px] font-bold text-navy-ink dark:text-white">
+                <Image src={t.avatar} alt="" width={42} height={42} className="h-[42px] w-[42px] shrink-0 rounded-full bg-white object-cover" />
+                {t.name}
+              </span>
               <div className="text-[15px] tracking-[2px] text-brand" aria-label={`${t.rating} out of 5 stars`}>{"★".repeat(t.rating)}</div>
             </figcaption>
           </figure>
@@ -64,7 +61,7 @@ export function Trusted() {
               <p className="mt-9 text-[10.5px] text-white/60">{tr("Media professionals and organizations across Indonesia.")}</p>
             </div>
             <div className="flex items-start justify-between rounded-[28px] bg-brand px-6 py-5 text-white dark:bg-[#c52a0e]">
-              <div><div className="text-[30px] leading-none">83%</div><div className="mt-3 text-[11px] text-white/80">{tr("Data accuracy")}</div></div>
+              <div><div className="text-[30px] leading-none">83%</div><div className="mt-3 text-[11px] text-white/80">{tr("Automated accuracy")}</div></div>
               <div><div className="text-[30px] leading-none">24/7</div><div className="mt-3 text-[11px] text-white/80">{tr("Monitoring")}</div></div>
             </div>
             <div className="flex items-center justify-between px-1 pt-1">
