@@ -7,12 +7,6 @@ import { benefitSlides, issues } from "@/lib/content";
 import { cn } from "@/lib/cn";
 import { useLang } from "@/lib/i18n";
 
-const badge = {
-  positive: "bg-[#E3F6EA] text-[#12a150] dark:bg-[#12a150]/20",
-  neutral: "bg-[#E8EBF0] text-[#566274] dark:bg-white/10 dark:text-white/70",
-  negative: "bg-[#FDE3E1] text-[#e2453c] dark:bg-[#e2453c]/20",
-} as const;
-
 const deltaColor = (d: string) => (d.startsWith("-") ? "bg-[#FDE3E1] text-[#e2453c] dark:bg-[#e2453c]/20" : "bg-[#E3F6EA] text-[#12a150] dark:bg-[#12a150]/20");
 
 export function IssuePreview() {
@@ -47,11 +41,11 @@ export function IssuePreview() {
           </div>
 
           <div className="mt-5 grid gap-3 sm:grid-cols-3">
-              <Tile label={t("Total Volume")} value="2.23M">
+            <Tile label={t("Total Volume")} value="2.23M">
               <Chip className="bg-[#E3F6EA] text-[#12a150] dark:bg-[#12a150]/20">+12.4%</Chip>
               <span className="text-[11px] text-[#9aa5b3] dark:text-white/40">{t("vs 7 days ago")}</span>
             </Tile>
-            <Tile label={t("Average Sentiment")} value={t("Netral")}>
+            <Tile label={t("Average Sentiment")} value={t("Neutral")}>
               <Chip className="bg-[#EEF0F4] text-[#566274] dark:bg-white/10 dark:text-white/70">{t("Stable")}</Chip>
               <span className="text-[11px] text-[#9aa5b3] dark:text-white/40">{t("Stable Trend")}</span>
             </Tile>
@@ -67,15 +61,11 @@ export function IssuePreview() {
                 <span className="w-3 text-[13px] font-bold text-navy-ink dark:text-white">{i.rank}</span>
                 <div className="min-w-0 flex-1">
                   <div className="truncate text-[14px] font-semibold text-navy-ink dark:text-white">{t(i.title)}</div>
-                  <div className="text-[11px] text-[#7a8798] dark:text-white/45">{t(i.meta)}</div>
                 </div>
                 <div className="flex flex-col items-end gap-1">
                   <span className="text-[13px] font-bold text-navy-ink dark:text-white">{i.volume}</span>
                   <Chip className={deltaColor(i.delta)}>{i.delta}</Chip>
                 </div>
-                <span className={cn("hidden w-[70px] justify-center rounded-full px-2.5 py-1 text-center text-[9px] font-bold uppercase sm:inline-flex", badge[i.sentiment])}>
-                  {t(i.sentiment)}
-                </span>
               </li>
             ))}
           </ul>
@@ -131,12 +121,12 @@ export function IssuePreview() {
   );
 }
 
-function Tile({ label, value, children }: { label: string; value: string; children: React.ReactNode }) {
+function Tile({ label, value, children }: { label: string; value: string; children?: React.ReactNode }) {
   return (
     <div className="glass-soft rounded-2xl p-4">
       <div className="text-[12px] text-[#6b7a8c] dark:text-white/55">{label}</div>
       <div className="mt-1 text-[28px] font-bold leading-tight text-navy-ink dark:text-white">{value}</div>
-      <div className="mt-2 flex flex-wrap items-center gap-2">{children}</div>
+      {children && <div className="mt-2 flex flex-wrap items-center gap-2">{children}</div>}
     </div>
   );
 }
