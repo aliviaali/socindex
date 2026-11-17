@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { FaFacebookF, FaInstagram, FaYoutube, FaXTwitter, FaTiktok } from "react-icons/fa6";
-import { LuBell, LuNewspaper } from "react-icons/lu";
+import { FaFacebookF, FaInstagram, FaYoutube, FaXTwitter, FaTiktok, FaThreads, FaLinkedin, FaGoogle } from "react-icons/fa6";
+import { LuBell, LuNotebookPen, LuMessagesSquare } from "react-icons/lu";
 import { Pill } from "@/components/ui";
 import { cn } from "@/lib/cn";
 import { useLang } from "@/lib/i18n";
@@ -13,13 +13,22 @@ const inner = "rounded-2xl bg-white p-4 shadow-sm dark:bg-[#1C2438]/80";
 const chip = "rounded-full px-3 py-1 text-[10px] font-semibold";
 
 function Sources() {
+  const { t } = useLang();
   const items = [
-    [LuNewspaper, "News", "text-[#2b5fd9]"], [FaInstagram, "Instagram", "text-[#d6249f]"], [FaFacebookF, "Facebook", "text-[#1877f2]"],
-    [FaXTwitter, "X", "text-black dark:text-white"], [FaTiktok, "TikTok", "text-black dark:text-white"], [FaYoutube, "YouTube", "text-[#ff0000]"],
+    [FaXTwitter, "X", "text-black dark:text-white"],
+    [FaFacebookF, "Facebook", "text-[#1877f2]"],
+    [FaInstagram, "Instagram", "text-[#d6249f]"],
+    [FaTiktok, "TikTok", "text-black dark:text-white"],
+    [FaThreads, "Threads", "text-black dark:text-white"],
+    [FaYoutube, "YouTube", "text-[#ff0000]"],
+    [FaLinkedin, "LinkedIn", "text-[#0a66c2]"],
+    [LuMessagesSquare, "Forum", "text-[#536b8b]"],
+    [LuNotebookPen, "Blog", "text-[#c16a27]"],
+    [FaGoogle, "Google Reviews", "text-[#4285f4]"],
   ] as const;
   return (
     <div className={frame}><div className={inner}>
-      <div className="flex items-center justify-between text-[10px] uppercase text-[#7a8798] dark:text-white/50">Connected sources <span className="rounded-full bg-[#E3F6EA] px-2 py-0.5 normal-case text-[#12a150]">6 live</span></div>
+      <div className="flex items-center justify-between text-[10px] uppercase text-[#7a8798] dark:text-white/50">{t("Connected sources")} <span className="rounded-full bg-[#E3F6EA] px-2 py-0.5 normal-case text-[#12a150]">{items.length} {t("live")}</span></div>
       <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
         {items.map(([I, n, c]) => (
           <span key={n} className="flex items-center gap-2 rounded-xl bg-[#F1F3F7] px-3 py-2.5 text-[11px] font-semibold text-navy-ink dark:bg-white/10 dark:text-white"><I className={c} size={13} />{n}</span>
@@ -88,7 +97,7 @@ function Monitoring() {
 }
 
 const steps = [
-  { t: "One Data Source", d: "One centralized workspace to monitor conversations across multiple social media platforms and digital sources.", v: <Sources /> },
+  { t: "One Data Source", d: "One centralized workspace to monitor conversations across multiple social media platforms and digital news sources.", v: <Sources /> },
   { t: "AI-Powered Analysis", d: "AI automatically processes and classifies conversations to uncover sentiment, topics, and meaningful insights from social media data.", v: <Analysis /> },
   { t: "Faster Decision", d: "Spot emerging trends, track conversation spikes, and identify influential voices to make faster, data-driven decisions.", v: <Decision /> },
   { t: "Optimize Brand Monitoring", d: "Customize your monitoring with relevant keywords and selected social media accounts. Stay informed with organized reports and timely alerts.", v: <Monitoring /> },
@@ -127,13 +136,13 @@ export function HowItWorks() {
     <section id="how-it-works" className="scroll-mt-20 bg-page py-16 lg:py-[90px]">
       <div className="mx-auto max-w-page px-4 sm:px-6 lg:px-0">
         <div className="mx-auto flex max-w-[640px] flex-col items-center text-center">
-          <Pill>{t("How It's Work")}</Pill>
-          <h2 className="mt-5 text-[clamp(1.9rem,3.4vw,2.5rem)] font-bold leading-[1.15] tracking-[-0.02em] text-navy-ink dark:text-white">{t("How Socindex Turns Data Into Your Decision")}</h2>
+          <Pill>{t("How it works")}</Pill>
+          <h2 className="mt-5 text-[clamp(1.9rem,3.4vw,2.5rem)] font-bold leading-[1.15] tracking-[-0.02em] text-navy-ink dark:text-white">{t("How Socindex Turns Data Into Decisions")}</h2>
           <p className="mt-5 max-w-[400px] text-[13px] leading-[1.6] text-[#7a8798] dark:text-white/55 font-normal">{t("Media data is collected, processed, and analyzed to help you discover the stories, trends, and connections behind the numbers.")}</p>
           <a href="#get-started" className="mt-6 inline-flex h-[34px] items-center rounded-full bg-[#D93A1E] px-6 text-[12px] font-semibold text-white transition hover:brightness-110">{t("Discuss With Us →")}</a>
         </div>
 
-        <ol ref={listRef} className="relative mx-auto mt-14 max-w-[840px] space-y-12 lg:space-y-[70px]">
+        <ol ref={listRef} className="relative mx-auto mt-14 flex max-w-[840px] flex-col gap-12 lg:gap-[70px]">
           {/* jalur garis (abu) + isi garis merah yang turun saat scroll */}
           <i className="absolute left-[18px] top-[18px] w-[2px] -translate-x-1/2 bg-line dark:bg-white/15 lg:left-1/2" style={{ height: trackH }} aria-hidden />
           <i className="absolute left-[18px] top-[18px] w-[2px] -translate-x-1/2 bg-[#D93A1E] lg:left-1/2" style={{ height: fill }} aria-hidden />
