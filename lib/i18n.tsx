@@ -48,10 +48,10 @@ const id: Record<string, string> = {
   "Monitor mentions, trends, and conversations in real time. Get accurate data updates from multiple social platforms. Make quick business decisions based on public opinion dynamics.":
     "Pantau sebutan, tren, dan percakapan secara real-time. Dapatkan pembaruan data akurat dari berbagai platform sosial. Ambil keputusan bisnis cepat berdasarkan dinamika opini publik.",
   "AI Tool, Human Quality": "Alat AI, Kualitas Manusia",
-  "Combine the speed of artificial intelligence analysis with expert verification. Maintain data accuracy rates of up to 98 percent. Generate reliable, in-depth insights for corporate strategy.":
-    "Gabungkan kecepatan analisis kecerdasan buatan dengan verifikasi pakar. Jaga akurasi data hingga 98 persen. Hasilkan wawasan mendalam yang andal untuk strategi perusahaan.",
+  "Up to 98% accuracy with human verification.":
+    "Akurasi hingga 98% dengan verifikasi oleh manusia.",
   "Comprehensive Analytics": "Analitik Komprehensif",
-  "Access comprehensive analytics reports, data visualizations, and executive summaries. Provide in depth metrics to support your team's strategic direction. Accelerate data-driven decision-making.":
+  "Access comprehensive analytics reports, data visualizations, and executive summaries. Provide in-depth metrics to support your team's strategic direction. Accelerate data-driven decision-making.":
     "Akses laporan analitik lengkap, visualisasi data, dan ringkasan eksekutif. Sajikan metrik mendalam untuk mendukung arah strategis tim Anda. Percepat pengambilan keputusan berbasis data.",
   "Social Network Analysis Mapping": "Pemetaan Analisis Jaringan Sosial",
   "Consolidate data streams from multiple social media platforms and online sources. Manage all digital monitoring in a single, integrated workspace. Eliminate data silos for organizational operational efficiency.":
@@ -62,9 +62,10 @@ const id: Record<string, string> = {
   "Influencer Tracking": "Pelacakan Influencer",
   "Turn content creator data into measurable business growth opportunities. Track audience reach, engagement rates, and campaign performance precisely. Optimize strategic partnerships to strengthen your brand position.":
     "Ubah data kreator konten menjadi peluang pertumbuhan bisnis yang terukur. Lacak jangkauan audiens, tingkat interaksi, dan kinerja kampanye dengan tepat. Optimalkan kemitraan strategis untuk memperkuat posisi merek Anda.",
+  "Connected sources": "Sumber terhubung", "live": "aktif",
   // How it works
-  "How It's Work": "Cara Kerja",
-  "How Socindex Turns Data Into Your Decision": "Bagaimana Socindex Mengubah Data Menjadi Keputusan Anda",
+  "How it works": "Cara Kerja",
+  "How Socindex Turns Data Into Decisions": "Cara Socindex Mengubah Data Menjadi Keputusan",
   "Media data is collected, processed, and analyzed to help you discover the stories, trends, and connections behind the numbers.":
     "Data media dikumpulkan, diproses, dan dianalisis untuk membantu Anda menemukan cerita, tren, dan hubungan di balik angka.",
   "Discuss With Us →": "Diskusi dengan Kami →", "STEP": "LANGKAH",
@@ -118,15 +119,15 @@ const id: Record<string, string> = {
   // Trusted
   "Trusted by leading organizations": "Dipercaya organisasi terkemuka",
   "Trusted by Agency, Government & Company": "Dipercaya Agensi, Pemerintah & Perusahaan",
-  "More than 500+ Agency and companies already use Socindex to manage their social media intelligence":
-    "Lebih dari 500+ agensi dan perusahaan telah memakai Socindex untuk mengelola intelijen media sosial mereka",
+  "More than 500 agencies and companies use Socindex to monitor and analyze social media.":
+    "Lebih dari 500 agensi dan perusahaan menggunakan Socindex untuk memantau dan menganalisis media sosial.",
   "Active users": "Pengguna aktif", "Media professionals and organizations across Indonesia.": "Profesional media dan organisasi di seluruh Indonesia.",
-  "Data accuracy": "Akurasi data", "Monitoring": "Pemantauan",
+  "Automated accuracy": "Akurasi otomatis", "Monitoring": "Pemantauan",
   // About
-  "Building Smarter Social Media Intelligences": "Membangun Intelijen Media Sosial yang Lebih Cerdas",
-  "Socindex is a BIG DATA MONITORING tools. Designed to help organizations and businesses analyze social media data with advanced AI and machine learning technology.":
-    "Socindex adalah alat BIG DATA MONITORING. Dirancang untuk membantu organisasi dan bisnis menganalisis data media sosial dengan teknologi AI dan machine learning canggih.",
-  "Media & Organizations": "Media & Organisasi", "Data Accuracy": "Akurasi Data",
+  "Building Smarter Social Media Intelligence": "Membangun Intelijen Media Sosial yang Lebih Cerdas",
+  "Socindex is an AI-powered social media monitoring and analytics platform that helps organizations understand conversations, measure public sentiment, and manage brand reputation across Facebook, X, Instagram, Threads, TikTok, LinkedIn, and Google Reviews.":
+    "Socindex adalah platform pemantauan dan analisis media sosial berbasis AI yang membantu organisasi memahami percakapan, mengukur sentimen publik, dan mengelola reputasi merek di Facebook, X, Instagram, Threads, TikTok, LinkedIn, dan Google Reviews.",
+  "Media & Organizations": "Media & Organisasi",
   "Learn More": "Selengkapnya", "Clarity": "Kejelasan", "Accuracy": "Akurasi", "Speed": "Kecepatan",
   // Team
   "Meet the team": "Kenali tim kami", "The people behind clearer decisions": "Orang-orang di balik keputusan yang lebih jelas",
@@ -135,8 +136,6 @@ const id: Record<string, string> = {
   // FAQ
   "Frequently": "Pertanyaan", "asked questions": "yang sering diajukan",
   "What is Socindex?": "Apa itu Socindex?",
-  "A Big Data Monitoring and reputation analysis platform based on Artificial Intelligence (AI) and Deep Learning. This platform is specifically designed to monitor, track, and analyze the performance and reputation of an organization or brand on social media and mass media.":
-    "Platform Big Data Monitoring dan analisis reputasi berbasis Kecerdasan Buatan (AI) dan Deep Learning. Platform ini dirancang khusus untuk memantau, melacak, dan menganalisis kinerja serta reputasi organisasi atau merek di media sosial dan media massa.",
   "Where does Socindex collect data from?": "Dari mana Socindex mengumpulkan data?",
   "Collecting netizen comments, trends, and activities on social media and collecting data from more than 500 print media, online media, and credible broadcast media.":
     "Mengumpulkan komentar, tren, dan aktivitas warganet di media sosial serta data dari lebih dari 500 media cetak, media daring, dan media penyiaran terpercaya.",
@@ -160,13 +159,13 @@ const id: Record<string, string> = {
   "Name": "Nama", "Email": "Email", "Phone Number": "Nomor Telepon", "Company": "Perusahaan", "Message": "Pesan",
   "Enter your name": "Masukkan nama Anda", "Enter your business email": "Masukkan email bisnis Anda", "Company name": "Nama perusahaan",
   "We’d love to know, how did you first discover our company ? *": "Kami ingin tahu, bagaimana Anda pertama kali mengenal perusahaan kami? *",
-  "Select an options": "Pilih salah satu", "Google / Search": "Google / Pencarian", "Social media": "Media sosial", "Referral": "Rekomendasi", "Event": "Acara", "Other": "Lainnya",
+  "Select an option": "Pilih salah satu", "Google / Search": "Google / Pencarian", "Social media": "Media sosial", "Referral": "Rekomendasi", "Event": "Acara", "Other": "Lainnya",
   "Request Demo": "Minta Demo",
   "Please fill in your name, a valid email, and how you found us.": "Mohon isi nama, email yang valid, dan bagaimana Anda mengenal kami.",
   "Thanks! We'll be in touch shortly.": "Terima kasih! Kami akan segera menghubungi Anda.",
   "Fast setup": "Pengaturan cepat", "Start monitoring in minutes": "Mulai memantau dalam hitungan menit",
   "Free trial": "Uji coba gratis", "Explore before subscribing": "Jelajahi sebelum berlangganan",
-  "Guided support": "Dukungan terpandu", "Experts ready to help": "Pakar siap membantu",
+  "24/7 support": "Dukungan 24/7", "Experts ready to help": "Pakar siap membantu",
   "Terms of Service": "Ketentuan Layanan", "Privacy Policy": "Kebijakan Privasi",
   "All Rights Reserved": "Hak Cipta Dilindungi",   // ===== Tambahan: Team, Testimoni, Issue preview, Try It Out, modal =====
   "Starting his career as a young journalist in Surabaya Post, he moved to Jakarta as a journalist at Republika and continued his career at Detik.com. He became a key journalist and deputy chief journalist, then sharpened his business skills as GM of Sales and Director of Operations (2011). With an extensive network and experience in business and organizational activities, he served as Secretary General of APJII from 2012 to 2015. In 2016, he co-founded Tirto.ID.":
@@ -175,12 +174,12 @@ const id: Record<string, string> = {
     "Memulai karier sebagai jurnalis sejak 1999, TBS, nama panggilan yang dikenal luas, kaya pengalaman redaksi di hampir semua bidang liputan. Berawal dari berita hiburan, peristiwa politik, olahraga, ekonomi, hingga teknologi informasi. Di akhir kariernya di Detik.com, ia dipercaya menangani inti bisnis pengembangan konten. Kemudian ia memulai tantangan baru dengan merintis Binokular hingga kini. Pada 2016, ia menjadi salah satu pendiri Tirto.ID.",
   "He graduated from Computer Polytechnic IPB. He started his carrier in Detik.com. In a short period, he had become a leading programmer. To pursue and gain more experience, he then worked in various multinational companies in software development and deployment. He spent most of his time working on foreign projects, until he returned to raise Binokular.":
     "Lulusan Politeknik Komputer IPB. Ia memulai kariernya di Detik.com dan dalam waktu singkat menjadi programmer andalan. Untuk menambah pengalaman, ia bekerja di berbagai perusahaan multinasional di bidang pengembangan dan penerapan perangkat lunak. Sebagian besar waktunya dihabiskan pada proyek luar negeri, hingga akhirnya kembali untuk membesarkan Binokular.",
-  "\"It is quite easy to use this dashboard and quite easy to understand, but sometimes there are down times which are a bit annoying and can be fixed in the system.\"":
-    "\"Dasbor ini cukup mudah digunakan dan dipahami, tetapi terkadang ada waktu henti yang agak mengganggu dan semoga bisa diperbaiki di sistem.\"",
   "“So far, it has been very helpful in completing our work related to media, both for monitoring, evaluation, monitoring current issues which we can later use to create media releases, create studies from the media exposure side, create reports to the board of directors, create reports required by regulators and others.”":
     "“Sejauh ini sangat membantu menyelesaikan pekerjaan kami terkait media, baik untuk pemantauan, evaluasi, maupun memantau isu terkini yang kemudian dapat kami gunakan untuk membuat rilis media, kajian dari sisi pemberitaan, laporan kepada direksi, laporan yang diwajibkan regulator, dan lainnya.”",
-  "“In today's digital age, public perception can change in a matter of minutes. Socindex has been a crucial partner in supporting our communications strategy, particularly in social media monitoring and public sentiment analysis. Reports are presented in real time, accurate, and easily actionable, especially when strategic issues arise that could potentially escalate into crises. Their rapid response and sharp insights significantly assist us in making informed and measured decisions.”":
-    "“Di era digital saat ini, persepsi publik bisa berubah dalam hitungan menit. Socindex menjadi mitra penting dalam mendukung strategi komunikasi kami, terutama dalam pemantauan media sosial dan analisis sentimen publik. Laporan disajikan secara real-time, akurat, dan mudah ditindaklanjuti, terutama saat muncul isu strategis yang berpotensi menjadi krisis. Respons cepat dan wawasan tajam mereka sangat membantu kami mengambil keputusan yang tepat dan terukur.”",
+  "“In today's digital age, public perception can change in a matter of minutes. Socindex has been a crucial partner in supporting our communications strategy, particularly in social media monitoring and public sentiment analysis.”":
+    "“Di era digital saat ini, persepsi publik bisa berubah dalam hitungan menit. Socindex menjadi mitra penting dalam mendukung strategi komunikasi kami, terutama dalam pemantauan media sosial dan analisis sentimen publik.”",
+  "“Reports are presented in real time, accurate, and easily actionable, especially when strategic issues arise that could potentially escalate into crises. Their rapid response and sharp insights significantly assist us in making informed and measured decisions.”":
+    "“Laporan disajikan secara real-time, akurat, dan mudah ditindaklanjuti, terutama saat muncul isu strategis yang berpotensi menjadi krisis. Respons cepat dan wawasan tajam mereka sangat membantu kami mengambil keputusan yang tepat dan terukur.”",
   // Issue preview
   "Dummy data • Top issues by conversation volume • Last 7 days": "Data contoh • Isu teratas berdasarkan volume percakapan • 7 hari terakhir",
   "DATA": "DATA", "Total Volume": "Total Volume", "vs 7 days ago": "dibanding 7 hari lalu",
@@ -194,8 +193,8 @@ const id: Record<string, string> = {
   // Try It Out
   "Try It Out": "Coba Sekarang", "Turning Conversations Into Strategic Action": "Mengubah Percakapan Menjadi Aksi Strategis",
   "Select Topic:": "Pilih Topik:", "Select topic": "Pilih topik",
-  "ENGAGEMENT": "KETERLIBATAN", "TALK": "PERCAKAPAN", "APPLAUSE": "APRESIASI", "AUDIENCE": "AUDIENS",
-  "Total comments, like, shares, views": "Total komentar, suka, bagikan, tayangan", "Total posts and comments": "Total unggahan dan komentar",
+  "TALK": "PERCAKAPAN",
+  "Total comments, likes, shares, and views": "Jumlah komentar, suka, bagikan, dan tayangan", "Total posts and comments": "Total unggahan dan komentar",
   "Total likes": "Total suka", "People reached": "Orang terjangkau",
   "Total Sentiment": "Total Sentimen", "Sentiment split": "Rincian sentimen",
   "Positive": "Positif", "Neutral": "Netral", "Negative": "Negatif",
