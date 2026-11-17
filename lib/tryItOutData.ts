@@ -33,7 +33,7 @@ const data: Record<string, TopicData> = {
   ihsg: {
     id: "ihsg", label: "IHSG Terkena Trading Halt",
     metrics: [
-      { label: "ENGAGEMENT", hint: "Total comments, like, shares, views", value: "35.3M", series: [5, 9, 6, 7, 6, 8], color: "#3B82F6" },
+      { label: "ENGAGEMENT", hint: "Total comments, likes, shares, and views", value: "35.3M", series: [5, 9, 6, 7, 6, 8], color: "#3B82F6" },
       { label: "TALK", hint: "Total posts and comments", value: "12.2K", series: [8, 5, 6, 5, 6, 7], color: "#F59E0B" },
       { label: "APPLAUSE", hint: "Total likes", value: "4.4M", series: [9, 6, 6, 5, 6, 7], color: "#EF4444" },
       { label: "AUDIENCE", hint: "People reached", value: "106.9M", series: [5, 7, 6, 8, 6, 7], color: "#22C55E" },
@@ -52,7 +52,7 @@ const data: Record<string, TopicData> = {
   bbm: {
     id: "bbm", label: "Kenaikan Harga BBM",
     metrics: [
-      { label: "ENGAGEMENT", hint: "Total comments, like, shares, views", value: "52.8M", series: [4, 6, 8, 9, 8, 9], color: "#3B82F6" },
+      { label: "ENGAGEMENT", hint: "Total comments, likes, shares, and views", value: "52.8M", series: [4, 6, 8, 9, 8, 9], color: "#3B82F6" },
       { label: "TALK", hint: "Total posts and comments", value: "28.6K", series: [5, 7, 8, 9, 8, 8], color: "#F59E0B" },
       { label: "APPLAUSE", hint: "Total likes", value: "6.1M", series: [6, 6, 7, 7, 6, 6], color: "#EF4444" },
       { label: "AUDIENCE", hint: "People reached", value: "142.3M", series: [5, 6, 7, 8, 8, 9], color: "#22C55E" },
@@ -71,7 +71,7 @@ const data: Record<string, TopicData> = {
   greenpeace: {
     id: "greenpeace", label: "Aksi Greenpeace di Monumen",
     metrics: [
-      { label: "ENGAGEMENT", hint: "Total comments, like, shares, views", value: "18.4M", series: [3, 5, 7, 6, 8, 7], color: "#3B82F6" },
+      { label: "ENGAGEMENT", hint: "Total comments, likes, shares, and views", value: "18.4M", series: [3, 5, 7, 6, 8, 7], color: "#3B82F6" },
       { label: "TALK", hint: "Total posts and comments", value: "7.9K", series: [4, 6, 5, 7, 6, 7], color: "#F59E0B" },
       { label: "APPLAUSE", hint: "Total likes", value: "2.7M", series: [5, 6, 6, 7, 6, 8], color: "#EF4444" },
       { label: "AUDIENCE", hint: "People reached", value: "64.2M", series: [4, 5, 7, 6, 8, 8], color: "#22C55E" },
