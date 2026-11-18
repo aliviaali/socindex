@@ -92,7 +92,7 @@ export function Footer() {
   const social = [
     { label: "Instagram", icon: FaInstagram, href: "https://www.instagram.com/socindex.id" },
     { label: "Threads", icon: FaThreads, href: "https://www.threads.com/@socindex.id" },
-    { label: "TikTok", icon: FaTiktok, href: " https://www.tiktok.com/@socindex.net" },
+    { label: "TikTok", icon: FaTiktok, href: "https://www.tiktok.com/@socindex.net" },
   ];
   return (
     <footer className="bg-white dark:bg-page">
@@ -101,7 +101,7 @@ export function Footer() {
           <Logo />
           <div className="flex items-center gap-5 text-[#1f2430] dark:text-white">
             {social.map(({ label, icon: Icon, href }) => (
-              <a key={label} href={href} aria-label={label} className="transition hover:text-brand"><Icon size={22} /></a>
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="transition hover:text-brand"><Icon size={22} /></a>
             ))}
           </div>
         </div>
