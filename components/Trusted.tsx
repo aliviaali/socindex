@@ -34,7 +34,7 @@ export function Trusted() {
 <div className="relative mt-8 overflow-hidden rounded-[18px] bg-[#F6F7F9] dark:bg-white/[.04]">
   <div className="relative overflow-hidden rounded-[18px]">
     <Image
-      src="/motion/Logo_Partners_light.gif"
+      src="/motion/Logo_Partners_transparent.webp"
       alt="Astra International, Bank Indonesia, Pertamina, Telkom Indonesia, Komdigi"
       width={1134}
       height={102}
