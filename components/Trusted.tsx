@@ -43,7 +43,7 @@ export function Trusted() {
     />
 
     <Image
-      src="/motion/Logo_Partners_dark.gif"
+      src="/motion/Logo_Partners_dark_transparent.webp"
       alt=""
       aria-hidden
       width={1134}
