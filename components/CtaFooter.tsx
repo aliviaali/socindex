@@ -92,7 +92,7 @@ export function Footer() {
   const social = [
     { label: "Instagram", icon: FaInstagram, href: "https://www.instagram.com/socindex.id" },
     { label: "Threads", icon: FaThreads, href: "https://www.threads.com/@socindex.id" },
-    { label: "TikTok", icon: FaTiktok, href: "https://www.tiktok.com/@socindex.id" },
+    { label: "TikTok", icon: FaTiktok, href: " https://www.tiktok.com/@socindex.net" },
   ];
   return (
     <footer className="bg-white dark:bg-page">
