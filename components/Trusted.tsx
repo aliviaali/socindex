@@ -24,7 +24,7 @@ export function Trusted() {
           <h2 className="mt-5 text-[clamp(1.9rem,3.4vw,2.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-navy-ink dark:text-white">
             {tr("Trusted by Agency, Government & Company")}
           </h2>
-          <p className="mx-auto mt-4 max-w-[760px] text-[18px] text-[#7a8798] dark:text-white/45 font-normal">
+            <p className="mx-auto mt-4 max-w-[760px] text-[15px] leading-relaxed text-[#7a8798] dark:text-white/45 font-normal lg:max-w-none lg:whitespace-nowrap lg:text-[18px]">
             {tr("More than 500 agencies and companies use Socindex to monitor and analyze social media.")}
           </p>
         </div>
