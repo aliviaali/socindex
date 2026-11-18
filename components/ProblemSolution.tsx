@@ -22,7 +22,7 @@ export function ProblemSolution() {
                 {t("From Scattered Data to Clear Insights")}
               </h2>
             </div>
-            <p className="mt-4 text-[14px] leading-[1.6] text-[#7a8798] dark:text-white/45 lg:mt-12 lg:max-w-[330px] lg:text-[13px]">
+            <p className="mt-4 text-[18px] leading-[1.6] text-[#7a8798] dark:text-white/45 lg:mt-12 lg:max-w-[330px] lg:text-[13px]">
               {t("A single intelligence layer transforms fragmented conversations into a clear, live view of reputation and performance.")}
             </p>
           </div>
