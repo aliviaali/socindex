@@ -152,7 +152,7 @@ export function HowItWorks() {
               <div className={cn("lg:max-w-[300px]", textLeft ? "lg:ml-auto lg:text-right" : "lg:mr-auto")}>
                 <p className="text-[9px] tracking-widest text-brand">{t("STEP")} &nbsp;0{i + 1}</p>
                 <h3 className="mt-1 text-[22px] font-bold leading-tight text-navy-ink dark:text-white">{t(s.t)}</h3>
-                <p className="mt-3 text-[12.5px] leading-[1.7] text-[#7a8798] dark:text-white/55">{t(s.d)}</p>
+                <p className="mt-3 text-[16px] leading-[1.7] text-[#7a8798] dark:text-white/55">{t(s.d)}</p>
               </div>
             );
             const vis = <div className={cn("w-full max-w-[400px]", textLeft ? "lg:mr-auto" : "lg:ml-auto")}>{s.v}</div>;
