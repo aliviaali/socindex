@@ -14,7 +14,7 @@ export function Team() {
           <h2 className="mt-3 text-[clamp(1.8rem,3.4vw,2.4rem)] font-bold leading-[1.15] tracking-[-0.02em] text-navy-ink dark:text-white">
             {t("The people behind clearer decisions")}
           </h2>
-          <p className="mt-1 text-[14px] text-navy-ink/80 dark:text-white/60 font-normal">
+          <p className="mt-1 text-[18px] text-navy-ink/80 dark:text-white/60 font-normal">
             {t("A passionate team of designers, developers, and data experts working to build better social media intelligence solutions.")}
           </p>
 
