@@ -25,7 +25,7 @@ export function IssuePreview() {
         <br />
         {t("Determine your next steps.")}
       </h2>
-      <p className="mt-4 text-[13.5px] text-[#7a8798] dark:text-white/45 font-normal">
+      <p className="mt-4 text-[18px] text-[#7a8798] dark:text-white/45 font-normal">
         {t("Find the most relevant conversations, understand the sentiment, and prioritize your team's response.")}
       </p>
 
