@@ -7,6 +7,9 @@ import { faqs } from "@/lib/content";
 import { cn } from "@/lib/cn";
 import { useLang } from "@/lib/i18n";
 
+/** Nomor WhatsApp untuk tombol "Get in Touch" (format internasional, tanpa + / spasi). */
+const WHATSAPP_URL = "https://wa.me/6281225118856";
+
 export function Faq() {
   const { t } = useLang();
   const [open, setOpen] = useState<number | null>(0);
@@ -68,7 +71,9 @@ export function Faq() {
               </p>
             </div>
             <a
-              href="mailto:hello@socindex.com"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-auto inline-flex h-[38px] items-center rounded-lg bg-[#C62A0F] px-5 text-[13px] font-semibold text-white transition hover:brightness-110 max-lg:mt-10"
             >
               {t("Get in Touch")}
