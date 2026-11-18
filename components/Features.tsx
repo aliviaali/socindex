@@ -38,7 +38,7 @@ export function Features() {
       <h2 className="mt-5 max-w-[660px] text-[clamp(1.9rem,3.4vw,2.5rem)] font-bold leading-[1.15] tracking-[-0.02em] text-navy-ink dark:text-white">
         {t("Powerful Features for Smarter Decisions")}
       </h2>
-      <p className="mt-4 max-w-[650px] text-[14px] leading-[1.6] text-[#7a8798] dark:text-white/45 font-normal">
+      <p className="mt-4 max-w-[650px] text-[18px] leading-[1.6] text-[#7a8798] dark:text-white/45 font-normal">
         {t("Everything you need to monitor, analyze, and understand your social media presence all in one dashboard.")}
       </p>
 
