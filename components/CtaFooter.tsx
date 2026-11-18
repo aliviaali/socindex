@@ -18,8 +18,9 @@ export function Cta() {
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
-    const email = String(f.get("email") ?? "").trim();
-    if (!String(f.get("name") ?? "").trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !f.get("source")) return setStatus("error");
+    const val = (k: string) => String(f.get(k) ?? "").trim();
+    // Wajib diisi: name, email (valid), phone, company, source. Hanya "message" yang opsional.
+    if (!val("name") || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val("email")) || !val("phone") || !val("company") || !val("source")) return setStatus("error");
     // TODO: hubungkan ke backend / CRM / API route Anda di sini (data ada di `f`).
     setStatus("done");
     e.currentTarget.reset();
@@ -42,10 +43,10 @@ export function Cta() {
         <p className="mt-6 text-[15px] text-white/85 font-normal">{t("Request your custom demo today and experience the power of social media intelligence.")}</p>
 
         <form onSubmit={onSubmit} noValidate className="mt-12 grid gap-5 sm:grid-cols-2">
-          <div><label htmlFor="c-name" className={label}>{t("Name")}</label><input id="c-name" name="name" autoComplete="name" placeholder={t("Enter your name")} className={field} /></div>
-          <div><label htmlFor="c-email" className={label}>{t("Email")}</label><input id="c-email" name="email" type="email" autoComplete="email" placeholder={t("Enter your business email")} aria-invalid={status === "error"} className={field} /></div>
-          <div><label htmlFor="c-phone" className={label}>{t("Phone Number")}</label><input id="c-phone" name="phone" type="tel" autoComplete="tel" placeholder="+62 8226457986" className={field} /></div>
-          <div><label htmlFor="c-company" className={label}>{t("Company")}</label><input id="c-company" name="company" autoComplete="organization" placeholder={t("Company name")} className={field} /></div>
+          <div><label htmlFor="c-name" className={label}>{t("Name")} *</label><input id="c-name" name="name" autoComplete="name" placeholder={t("Enter your name")} className={field} /></div>
+          <div><label htmlFor="c-email" className={label}>{t("Email")} *</label><input id="c-email" name="email" type="email" autoComplete="email" placeholder={t("Enter your business email")} aria-invalid={status === "error"} className={field} /></div>
+          <div><label htmlFor="c-phone" className={label}>{t("Phone Number")} *</label><input id="c-phone" name="phone" type="tel" autoComplete="tel" placeholder="+62 8226457986" className={field} /></div>
+          <div><label htmlFor="c-company" className={label}>{t("Company")} *</label><input id="c-company" name="company" autoComplete="organization" placeholder={t("Company name")} className={field} /></div>
           <div className="sm:col-span-2">
             <label htmlFor="c-source" className={label}>{t("We’d love to know, how did you first discover our company ? *")}</label>
             <GlassSelect
@@ -63,7 +64,7 @@ export function Cta() {
           <button type="submit" className="h-[56px] rounded-2xl border border-white/20 bg-[#8F2419] text-[15px] font-semibold text-white shadow-lg transition hover:bg-[#751B12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white dark:border-white/70 dark:bg-white dark:text-[#8F2419] dark:hover:bg-orange-50 sm:col-span-2">{t("Request Demo")}</button>
         </form>
         <p role="status" className="mt-3 min-h-[20px] text-[13px] text-white/90">
-          {status === "error" && t("Please fill in your name, a valid email, and how you found us.")}
+          {status === "error" && t("Please fill in all required fields (*) with a valid email.")}
           {status === "done" && t("Thanks! We'll be in touch shortly.")}
         </p>
 
