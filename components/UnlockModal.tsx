@@ -66,7 +66,7 @@ export function UnlockModal({ topic, onClose }: { topic: string; onClose: () => 
         <p className="mt-5 text-center text-[14px] text-[#5B667A] dark:text-white/60">
           {t("Already a subscriber?")}{" "}
           {/* (apply api) ganti href dengan URL login dashboard */}
-          <a href="#" className="font-bold text-[#1B2433] underline dark:text-white">{t("Sign in")}</a>
+          <a href="https://app.socindex.net/login" className="font-bold text-[#1B2433] underline dark:text-white">{t("Sign in")}</a>
         </p>
       </div>
     </div>
