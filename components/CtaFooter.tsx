@@ -12,22 +12,59 @@ const perkIcon = { zap: LuZap, card: LuCreditCard, headset: LuHeadset } as const
 
 export function Cta() {
   const { t } = useLang();
-  const [status, setStatus] = useState<"idle" | "error" | "done">("idle");
+  const [status, setStatus] = useState<"idle" | "done">("idle");
   const [source, setSource] = useState("");
+  // pesan error per kolom: { name: "...", email: "..." } (disimpan dalam bahasa Inggris, diterjemahkan saat tampil)
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const clearError = (k: string) =>
+    setErrors((p) => {
+      if (!p[k]) return p;
+      const n = { ...p };
+      delete n[k];
+      return n;
+    });
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
     const val = (k: string) => String(f.get(k) ?? "").trim();
+
     // Wajib diisi: name, email (valid), phone, company, source. Hanya "message" yang opsional.
-    if (!val("name") || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val("email")) || !val("phone") || !val("company") || !val("source")) return setStatus("error");
+    // Urutan penambahan = urutan tampil di form, jadi kolom pertama yang bermasalah yang di-fokus.
+    const next: Record<string, string> = {};
+    if (!val("name")) next.name = "Name is required.";
+    if (!val("email")) next.email = "Email is required.";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val("email"))) next.email = "Please enter a valid email address.";
+    if (!val("phone")) next.phone = "Phone number is required.";
+    if (!val("company")) next.company = "Company is required.";
+    if (!val("source")) next.source = "Please select how you found us.";
+
+    setErrors(next);
+    const first = Object.keys(next)[0];
+    if (first) {
+      setStatus("idle");
+      document.getElementById(`c-${first}`)?.focus();
+      return;
+    }
+
     // TODO: hubungkan ke backend / CRM / API route Anda di sini (data ada di `f`).
     setStatus("done");
     e.currentTarget.reset();
     setSource("");
   }
 
-  const field = "h-[56px] w-full rounded-2xl border border-white/30 bg-white/15 backdrop-blur-[3px] px-5 text-[14px] text-white outline-none placeholder:text-white/80 focus:border-white/60";
+  const invalid = " !border-white ring-2 ring-white/60";
+  const fieldCls = (k: string) => field + (errors[k] ? invalid : "");
+  const aria = (k: string) => ({ "aria-invalid": errors[k] ? true : undefined, "aria-describedby": errors[k] ? `err-${k}` : undefined });
+  const err = (k: string) =>
+    errors[k] ? (
+      <p id={`err-${k}`} role="alert" className="mt-1.5 text-left text-[12.5px] font-semibold text-white">
+        {t(errors[k])}
+      </p>
+    ) : null;
+
+  const field ="h-[56px] w-full rounded-2xl border border-white/30 bg-white/15 backdrop-blur-[3px] px-5 text-[14px] text-white outline-none placeholder:text-white/80 focus:border-white/60";
   const label = "mb-2 block text-left text-[14px] font-bold";
 
   return (
@@ -42,29 +79,34 @@ export function Cta() {
         <h2 className="mt-9 text-[clamp(2.2rem,5vw,3.35rem)] font-bold leading-[1.1] tracking-[-0.02em]">{t("Ready to See the Bigger Picture?")}</h2>
         <p className="mt-6 text-[15px] text-white/85 font-normal">{t("Request your custom demo today and experience the power of social media intelligence.")}</p>
 
-        <form onSubmit={onSubmit} noValidate className="mt-12 grid gap-5 sm:grid-cols-2">
-          <div><label htmlFor="c-name" className={label}>{t("Name")} *</label><input id="c-name" name="name" autoComplete="name" placeholder={t("Enter your name")} className={field} /></div>
-          <div><label htmlFor="c-email" className={label}>{t("Email")} *</label><input id="c-email" name="email" type="email" autoComplete="email" placeholder={t("Enter your business email")} aria-invalid={status === "error"} className={field} /></div>
-          <div><label htmlFor="c-phone" className={label}>{t("Phone Number")} *</label><input id="c-phone" name="phone" type="tel" autoComplete="tel" placeholder="+62 8226457986" className={field} /></div>
-          <div><label htmlFor="c-company" className={label}>{t("Company")} *</label><input id="c-company" name="company" autoComplete="organization" placeholder={t("Company name")} className={field} /></div>
+        <form
+          onSubmit={onSubmit}
+          onChange={(e) => { const n = (e.target as unknown as { name?: string }).name; if (n) clearError(n); }} /* error kolom hilang saat user mulai mengetik */
+          noValidate
+          className="mt-12 grid gap-5 sm:grid-cols-2"
+        >
+          <div><label htmlFor="c-name" className={label}>{t("Name")} *</label><input id="c-name" name="name" autoComplete="name" placeholder={t("Enter your name")} {...aria("name")} className={fieldCls("name")} />{err("name")}</div>
+          <div><label htmlFor="c-email" className={label}>{t("Email")} *</label><input id="c-email" name="email" type="email" autoComplete="email" placeholder={t("Enter your business email")} {...aria("email")} className={fieldCls("email")} />{err("email")}</div>
+          <div><label htmlFor="c-phone" className={label}>{t("Phone Number")} *</label><input id="c-phone" name="phone" type="tel" autoComplete="tel" placeholder="+62 8226457986" {...aria("phone")} className={fieldCls("phone")} />{err("phone")}</div>
+          <div><label htmlFor="c-company" className={label}>{t("Company")} *</label><input id="c-company" name="company" autoComplete="organization" placeholder={t("Company name")} {...aria("company")} className={fieldCls("company")} />{err("company")}</div>
           <div className="sm:col-span-2">
             <label htmlFor="c-source" className={label}>{t("We’d love to know, how did you first discover our company ? *")}</label>
             <GlassSelect
               id="c-source"
               name="source"
               value={source}
-              onChange={setSource}
+              onChange={(v) => { setSource(v); clearError("source"); }}
               placeholder={t("Select an option")}
               options={["Google / Search", "Social media", "Referral", "Event", "Other"].map((o) => ({ value: o, label: t(o) }))}
-              buttonClassName={field + " items-center"}
+              buttonClassName={fieldCls("source") + " items-center"}
               menuClassName="text-left"
             />
+            {err("source")}
           </div>
           <div className="sm:col-span-2"><label htmlFor="c-msg" className={label}>{t("Message")}</label><textarea id="c-msg" name="message" rows={6} className={field + " h-auto py-4"} /></div>
           <button type="submit" className="h-[56px] rounded-2xl border border-white/20 bg-[#8F2419] text-[15px] font-semibold text-white shadow-lg transition hover:bg-[#751B12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white dark:border-white/70 dark:bg-white dark:text-[#8F2419] dark:hover:bg-orange-50 sm:col-span-2">{t("Request Demo")}</button>
         </form>
         <p role="status" className="mt-3 min-h-[20px] text-[13px] text-white/90">
-          {status === "error" && t("Please fill in all required fields (*) with a valid email.")}
           {status === "done" && t("Thanks! We'll be in touch shortly.")}
         </p>
 
