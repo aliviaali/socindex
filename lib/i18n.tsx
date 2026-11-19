@@ -162,6 +162,13 @@ const id: Record<string, string> = {
   "Select an option": "Pilih salah satu", "Google / Search": "Google / Pencarian", "Social media": "Media sosial", "Referral": "Rekomendasi", "Event": "Acara", "Other": "Lainnya",
   "Request Demo": "Minta Demo",
   "Please fill in your name, a valid email, and how you found us.": "Mohon isi nama, email yang valid, dan bagaimana Anda mengenal kami.",
+  // Pesan error per kolom di form Get Started
+  "Name is required.": "Nama wajib diisi.",
+  "Email is required.": "Email wajib diisi.",
+  "Please enter a valid email address.": "Mohon masukkan alamat email yang valid.",
+  "Phone number is required.": "Nomor telepon wajib diisi.",
+  "Company is required.": "Perusahaan wajib diisi.",
+  "Please select how you found us.": "Mohon pilih bagaimana Anda mengenal kami.",
   "Thanks! We'll be in touch shortly.": "Terima kasih! Kami akan segera menghubungi Anda.",
   "Fast setup": "Pengaturan cepat", "Start monitoring in minutes": "Mulai memantau dalam hitungan menit",
   "Free trial": "Uji coba gratis", "Explore before subscribing": "Jelajahi sebelum berlangganan",
