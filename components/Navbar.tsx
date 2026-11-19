@@ -164,6 +164,8 @@ export function Navbar() {
           <ThemeToggle />
           <a
             href={LOGIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden h-[34px] items-center rounded-lg bg-[#BB0C09] px-5 text-[14px] font-medium text-white shadow-sm transition hover:brightness-110 sm:inline-flex dark:bg-[#C0140B]"
           >
             {t("Login")}
@@ -184,7 +186,7 @@ export function Navbar() {
         <div className="glass-strong mx-3 mb-3 rounded-2xl md:hidden">
           <div className="mx-auto flex max-w-page flex-col gap-4 px-4 py-5 sm:px-6">
             <Links items={navLight} active={active} mobile onClick={() => setOpen(false)} />
-            <a href={LOGIN_URL} className="inline-flex h-10 items-center justify-center rounded-lg bg-[#BB0C09] text-sm font-medium text-white sm:hidden">
+            <a href={LOGIN_URL} target="_blank" rel="noopener noreferrer" className="inline-flex h-10 items-center justify-center rounded-lg bg-[#BB0C09] text-sm font-medium text-white sm:hidden">
               {t("Login")}
             </a>
           </div>
