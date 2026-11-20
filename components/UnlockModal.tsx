@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { LuArrowRight, LuCheck, LuLock } from "react-icons/lu";
 import { useLang } from "@/lib/i18n";
@@ -11,30 +11,36 @@ const col = { pos: "#72ACC1", neu: "#697687", neg: "#DC3D4B" } as const;
 /** Notifikasi "Unlock content" (light & dark mode). Dipakai di Try It Out → Data Source → View All. */
 export function UnlockModal({ topic, onClose }: { topic: string; onClose: () => void }) {
   const { t } = useLang();
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDialogElement>(null);
+  const closeRef = useRef(onClose);
+  useLayoutEffect(() => { closeRef.current = onClose; }, [onClose]);
 
   useEffect(() => {
     const prev = document.activeElement as HTMLElement | null;
-    ref.current?.querySelector<HTMLElement>("a,button")?.focus();
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
-    document.addEventListener("keydown", onKey);
+    const previousOverflow = document.body.style.overflow;
+    const dialog = ref.current;
+    dialog?.showModal();
     document.body.style.overflow = "hidden";
     return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-      prev?.focus();
+      dialog?.close();
+      document.body.style.overflow = previousOverflow;
+      if (prev?.isConnected) prev.focus();
     };
-  }, [onClose]);
+  }, []);
 
   // Portal ke <body>: pembungkus kaca (backdrop-filter) membuat `fixed` terjebak di dalamnya
   return createPortal(
-    <div className="fixed inset-0 z-[100] grid place-items-center bg-black/50 p-4 backdrop-blur-[2px]" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
-      <div
+    <dialog
         ref={ref}
-        role="dialog"
+        onCancel={(event) => { event.preventDefault(); closeRef.current(); }}
+        onClick={(event) => {
+          if (event.target !== event.currentTarget) return;
+          const r = event.currentTarget.getBoundingClientRect();
+          if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) closeRef.current();
+        }}
         aria-modal="true"
         aria-labelledby="unlock-title"
-        className="max-h-[92vh] w-full max-w-[560px] animate-fadeUp overflow-y-auto rounded-[28px] border border-[#E3E8EE] bg-white p-6 shadow-2xl dark:border-white/10 dark:bg-[#1E2530] sm:p-8"
+        className="m-auto backdrop:bg-black/50 backdrop:backdrop-blur-sm max-h-[92dvh] w-[calc(100%-2rem)] max-w-[560px] animate-fadeUp overflow-y-auto rounded-[28px] border border-[#E3E8EE] bg-white p-6 shadow-2xl dark:border-white/10 dark:bg-[#1E2530] sm:p-8"
       >
         <div className="relative flex h-[130px] items-end justify-center gap-[3.5%] overflow-hidden rounded-[18px] bg-[#EEF1F6] px-[4%] dark:bg-[#2A313C]" aria-hidden>
           {bars.map(([h, c], i) => (<i key={i} className="w-[5.2%] rounded-t-lg" style={{ height: `${h * 0.78}%`, background: col[c as keyof typeof col] }} />))}
@@ -68,7 +74,6 @@ export function UnlockModal({ topic, onClose }: { topic: string; onClose: () => 
           {/* (apply api) ganti href dengan URL login dashboard */}
           <a href="https://app.socindex.net/login" className="font-bold text-[#1B2433] underline dark:text-white">{t("Sign in")}</a>
         </p>
-      </div>
-    </div>
+    </dialog>
   , document.body);
 }
