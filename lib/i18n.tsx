@@ -70,7 +70,7 @@ const id: Record<string, string> = {
     "Data media dikumpulkan, diproses, dan dianalisis untuk membantu Anda menemukan cerita, tren, dan hubungan di balik angka.",
   "Discuss With Us →": "Diskusi dengan Kami →", "STEP": "LANGKAH",
   "One Data Source": "Satu Sumber Data",
-  "One centralized workspace to monitor conversations across multiple social media platforms and digital news sources.":
+  "One centralized workspace to monitor conversations across multiple social media platforms and digital sources.":
     "Satu ruang kerja terpusat untuk memantau percakapan di berbagai platform media sosial dan sumber berita digital.",
   "AI-Powered Analysis": "Analisis Berbasis AI",
   "AI automatically processes and classifies conversations to uncover sentiment, topics, and meaningful insights from social media data.":
