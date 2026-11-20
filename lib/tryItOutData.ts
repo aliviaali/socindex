@@ -13,9 +13,9 @@ export type TopicData = {
   id: string;
   label: string;
   metrics: { label: string; hint: string; value: string; series: number[]; color: string }[];
-  sentiment: { dominant: string; pct: Sentiment; counts: { positive: string; neutral: string; negative: string } };
-  totalPosts: string;
-  sources: { name: "Tiktok" | "Instagram" | "Threads" | "Youtube" | "Twitter"; total: number; pct: Sentiment }[];
+  sentiment: { dominant: keyof Sentiment; pct: Sentiment; counts: Sentiment };
+  totalPosts: number;
+  sources: { name: "Tiktok" | "Instagram" | "Threads" | "Youtube" | "Twitter"; total: number; pct: Sentiment; counts: Sentiment }[];
   words: { text: string; size: number; color: string }[];
 };
 
@@ -29,7 +29,11 @@ export const topics = [
   { id: "greenpeace", label: "Aksi Greenpeace di Monumen" },
 ] as const;
 
-const data: Record<string, TopicData> = {
+type RawTopic = Omit<TopicData, "sentiment" | "totalPosts" | "sources"> & {
+  sources: { name: TopicData["sources"][number]["name"]; counts: Sentiment }[];
+};
+// Synthetic counts for demonstration; these are not observations from the real platforms.
+const rawData: Record<string, RawTopic> = {
   ihsg: {
     id: "ihsg", label: "IHSG Terkena Trading Halt",
     metrics: [
@@ -38,16 +42,14 @@ const data: Record<string, TopicData> = {
       { label: "APPLAUSE", hint: "Total likes", value: "4.4M", series: [9, 6, 6, 5, 6, 7], color: "#EF4444" },
       { label: "AUDIENCE", hint: "People reached", value: "106.9M", series: [5, 7, 6, 8, 6, 7], color: "#22C55E" },
     ],
-    sentiment: { dominant: "neutral", pct: { positive: 15, neutral: 65, negative: 20 }, counts: { positive: "900K", neutral: "900K", negative: "300K" } },
-    totalPosts: "12,240",
     sources: [
-      { name: "Tiktok", total: 4236, pct: { positive: 10, neutral: 62, negative: 18 } },
-      { name: "Instagram", total: 3807, pct: { positive: 18, neutral: 55, negative: 16 } },
-      { name: "Threads", total: 1989, pct: { positive: 8, neutral: 33, negative: 13 } },
-      { name: "Youtube", total: 1006, pct: { positive: 5, neutral: 12, negative: 4 } },
-      { name: "Twitter", total: 958, pct: { positive: 2, neutral: 12, negative: 6 } },
+      { name: "Tiktok", counts: { positive: 471, neutral: 2918, negative: 847 } },
+      { name: "Instagram", counts: { positive: 770, neutral: 2353, negative: 684 } },
+      { name: "Threads", counts: { positive: 295, neutral: 1215, negative: 479 } },
+      { name: "Youtube", counts: { positive: 239, neutral: 575, negative: 192 } },
+      { name: "Twitter", counts: { positive: 96, neutral: 575, negative: 287 } },
     ],
-    words: cloud([["greenpeaceindonesia", 18], ["jam", 18], ["kawasan", 18], ["ruang", 18], ["warga", 18], ["hukum", 18], ["prabowo", 18], ["kondisi", 18], ["hi", 28], ["aktivis", 28], ["indonesia", 32], ["membentangkan", 32], ["monumen", 32], ["bundaran", 28], ["greenpeace", 30], ["aksi", 24], ["spanduk", 28], ["jakarta", 26], ["krisis", 22], ["iklim", 20], ["masyarakat", 22], ["pemerintah", 24], ["selamat", 18], ["patung", 20], ["biaya", 20], ["hidup", 20], ["lingkungan", 18], ["polisi", 18]]),
+    words: cloud([["ihsg", 34], ["saham", 30], ["bursa", 28], ["investor", 26], ["trading", 24], ["halt", 24], ["pasar", 22], ["indeks", 22], ["ekonomi", 20], ["transaksi", 20]]),
   },
   bbm: {
     id: "bbm", label: "Kenaikan Harga BBM",
@@ -57,14 +59,12 @@ const data: Record<string, TopicData> = {
       { label: "APPLAUSE", hint: "Total likes", value: "6.1M", series: [6, 6, 7, 7, 6, 6], color: "#EF4444" },
       { label: "AUDIENCE", hint: "People reached", value: "142.3M", series: [5, 6, 7, 8, 8, 9], color: "#22C55E" },
     ],
-    sentiment: { dominant: "negative", pct: { positive: 12, neutral: 38, negative: 50 }, counts: { positive: "1.1M", neutral: "3.4M", negative: "4.6M" } },
-    totalPosts: "28,640",
     sources: [
-      { name: "Twitter", total: 9120, pct: { positive: 6, neutral: 24, negative: 55 } },
-      { name: "Tiktok", total: 7410, pct: { positive: 12, neutral: 30, negative: 40 } },
-      { name: "Instagram", total: 6020, pct: { positive: 10, neutral: 35, negative: 35 } },
-      { name: "Threads", total: 3380, pct: { positive: 8, neutral: 32, negative: 30 } },
-      { name: "Youtube", total: 2710, pct: { positive: 5, neutral: 20, negative: 22 } },
+      { name: "Twitter", counts: { positive: 644, neutral: 2575, negative: 5901 } },
+      { name: "Tiktok", counts: { positive: 1084, neutral: 2711, negative: 3615 } },
+      { name: "Instagram", counts: { positive: 752, neutral: 2634, negative: 2634 } },
+      { name: "Threads", counts: { positive: 386, neutral: 1545, negative: 1449 } },
+      { name: "Youtube", counts: { positive: 288, neutral: 1153, negative: 1269 } },
     ],
     words: cloud([["bbm", 34], ["harga", 30], ["naik", 30], ["pertalite", 26], ["subsidi", 26], ["rakyat", 24], ["demo", 22], ["ojol", 22], ["inflasi", 20], ["pemerintah", 24], ["mahasiswa", 20], ["transportasi", 20], ["ekonomi", 22], ["antre", 18], ["spbu", 18], ["tarif", 18]]),
   },
@@ -76,28 +76,63 @@ const data: Record<string, TopicData> = {
       { label: "APPLAUSE", hint: "Total likes", value: "2.7M", series: [5, 6, 6, 7, 6, 8], color: "#EF4444" },
       { label: "AUDIENCE", hint: "People reached", value: "64.2M", series: [4, 5, 7, 6, 8, 8], color: "#22C55E" },
     ],
-    sentiment: { dominant: "positive", pct: { positive: 48, neutral: 40, negative: 12 }, counts: { positive: "1.3M", neutral: "1.1M", negative: "320K" } },
-    totalPosts: "7,912",
     sources: [
-      { name: "Instagram", total: 3100, pct: { positive: 30, neutral: 40, negative: 8 } },
-      { name: "Twitter", total: 2200, pct: { positive: 25, neutral: 30, negative: 10 } },
-      { name: "Tiktok", total: 1500, pct: { positive: 20, neutral: 25, negative: 9 } },
-      { name: "Threads", total: 700, pct: { positive: 10, neutral: 18, negative: 5 } },
-      { name: "Youtube", total: 412, pct: { positive: 6, neutral: 10, negative: 3 } },
+      { name: "Instagram", counts: { positive: 1192, neutral: 1590, negative: 318 } },
+      { name: "Twitter", counts: { positive: 846, neutral: 1015, negative: 339 } },
+      { name: "Tiktok", counts: { positive: 556, neutral: 694, negative: 250 } },
+      { name: "Threads", counts: { positive: 212, neutral: 382, negative: 106 } },
+      { name: "Youtube", counts: { positive: 130, neutral: 217, negative: 65 } },
     ],
     words: cloud([["greenpeace", 34], ["aktivis", 28], ["iklim", 28], ["monumen", 26], ["spanduk", 24], ["lingkungan", 24], ["aksi", 22], ["jakarta", 22], ["krisis", 20], ["polisi", 18], ["warga", 18], ["hukum", 18]]),
   },
 };
 
-/**
- * (apply api) Ganti isi fungsi ini dengan fetch ke API dashboard, mis.:
- *   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/topics/${id}/summary`);
- *   return (await res.json()) as TopicData;
- * Saat ini mengembalikan data dummy dengan jeda kecil agar UI siap untuk loading state.
- */
-export async function getTopicData(id: string): Promise<TopicData> {
-  await new Promise((r) => setTimeout(r, 150));
-  return data[id] ?? data.ihsg;
+const keys = ["positive", "neutral", "negative"] as const;
+
+export function percentages(counts: Sentiment): Sentiment {
+  const total = counts.positive + counts.neutral + counts.negative;
+  if (!total) return { positive: 0, neutral: 0, negative: 0 };
+  // Largest-remainder rounding: displayed percentages add up to exactly 100.0%.
+  const units = keys.map(key => Math.floor(counts[key] / total * 1000));
+  const order = keys.map((key, i) => ({ i, remainder: counts[key] / total * 1000 - units[i] }))
+    .sort((a, b) => b.remainder - a.remainder);
+  const remaining = 1000 - units.reduce((a, b) => a + b, 0);
+  for (let i = 0; i < remaining; i++) units[order[i].i]++;
+  return { positive: units[0] / 10, neutral: units[1] / 10, negative: units[2] / 10 };
+}
+
+function buildTopic(raw: RawTopic): TopicData {
+  const counts: Sentiment = { positive: 0, neutral: 0, negative: 0 };
+  const sources = raw.sources.map(source => {
+    for (const key of keys) counts[key] += source.counts[key];
+    return { ...source, total: source.counts.positive + source.counts.neutral + source.counts.negative, pct: percentages(source.counts) };
+  });
+  const totalPosts = sources.reduce((sum, source) => sum + source.total, 0);
+  const dominant = keys.reduce((best, key) => counts[key] > counts[best] ? key : best);
+  return {
+    ...raw, sources, totalPosts,
+    metrics: raw.metrics.map(metric => metric.label === "TALK" ? {
+      ...metric, value: new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 }).format(totalPosts),
+    } : metric),
+    sentiment: { dominant, counts, pct: percentages(counts) },
+  };
+}
+
+const data = Object.fromEntries(Object.entries(rawData).map(([id, raw]) => [id, buildTopic(raw)]));
+
+export async function getTopicData(id: string, signal?: AbortSignal): Promise<TopicData> {
+  if (!Object.prototype.hasOwnProperty.call(data, id)) throw new Error("Unknown topic");
+  await new Promise<void>((resolve, reject) => {
+    if (signal?.aborted) { reject(new DOMException("Aborted", "AbortError")); return; }
+    const abort = () => {
+      clearTimeout(timer);
+      signal?.removeEventListener("abort", abort);
+      reject(new DOMException("Aborted", "AbortError"));
+    };
+    const timer = setTimeout(() => { signal?.removeEventListener("abort", abort); resolve(); }, 150);
+    signal?.addEventListener("abort", abort, { once: true });
+  });
+  return data[id];
 }
 
 export const defaultTopicData = data.ihsg;
