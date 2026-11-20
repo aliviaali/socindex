@@ -97,7 +97,7 @@ function Monitoring() {
 }
 
 const steps = [
-  { t: "One Data Source", d: "One centralized workspace to monitor conversations across multiple social media platforms and digital news sources.", v: <Sources /> },
+  { t: "One Data Source", d: "One centralized workspace to monitor conversations across multiple social media platforms and digital sources.", v: <Sources /> },
   { t: "AI-Powered Analysis", d: "AI automatically processes and classifies conversations to uncover sentiment, topics, and meaningful insights from social media data.", v: <Analysis /> },
   { t: "Faster Decision", d: "Spot emerging trends, track conversation spikes, and identify influential voices to make faster, data-driven decisions.", v: <Decision /> },
   { t: "Optimize Brand Monitoring", d: "Customize your monitoring with relevant keywords and selected social media accounts. Stay informed with organized reports and timely alerts.", v: <Monitoring /> },
